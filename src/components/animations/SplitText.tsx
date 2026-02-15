@@ -4,18 +4,24 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 interface SplitTextProps {
-  children: string;
+  text?: string;
+  children?: string;
+  as?: string;
   className?: string;
   delay?: number;
 }
 
-export function SplitText({ children, className, delay = 0 }: SplitTextProps) {
+export function SplitText({ text, children, as: Tag = "span", className, delay = 0 }: SplitTextProps) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
-  const words = children.split(" ");
+  const content = text ?? children ?? "";
+  const words = content.split(" ");
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const MotionTag = (motion as any)[Tag] as typeof motion.span;
 
   return (
-    <motion.span
+    <MotionTag
       ref={ref}
       className={`inline ${className ?? ""}`}
       initial="hidden"
@@ -43,6 +49,8 @@ export function SplitText({ children, className, delay = 0 }: SplitTextProps) {
           {word}
         </motion.span>
       ))}
-    </motion.span>
+    </MotionTag>
   );
 }
+
+export default SplitText;

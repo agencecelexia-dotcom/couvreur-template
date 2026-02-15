@@ -25,3 +25,5 @@ export function FadeUp({ children, delay = 0, className }: FadeUpProps) {
     </motion.div>
   );
 }
+
+export default FadeUp;

@@ -1,135 +1,120 @@
 import type { Metadata } from "next";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
-import { ContactForm } from "./ContactForm";
+import Image from "next/image";
+import Container from "@/components/ui/Container";
+import FadeIn from "@/components/animations/FadeIn";
+import ContactForm from "@/components/features/ContactForm";
+import GoogleMap from "@/components/features/GoogleMap";
+import { company } from "@/data/company";
 
 export const metadata: Metadata = {
-  title: "Contact & Devis Gratuit",
+  title: "Contact",
   description:
-    "Demandez votre devis couverture gratuit sous 48h. Couvreur Île-de-France — ardoise, zinc, tuiles, isolation. Urgences 7j/7. 01 45 78 92 31.",
-  alternates: { canonical: "https://toitsexcellence.fr/contact" },
+    "Demandez un devis gratuit pour votre toiture. Toitures Prestige intervient sur toute l'Île-de-France.",
 };
-
-const contactInfo = [
-  {
-    icon: Phone,
-    label: "Téléphone",
-    primary: "01 45 78 92 31",
-    secondary: "Urgences disponibles 7j/7",
-    href: "tel:+33145789231",
-  },
-  {
-    icon: Mail,
-    label: "Email",
-    primary: "contact@toitsexcellence.fr",
-    secondary: "Réponse sous 24h",
-    href: "mailto:contact@toitsexcellence.fr",
-  },
-  {
-    icon: MapPin,
-    label: "Adresse",
-    primary: "15 Rue de la Tuile",
-    secondary: "94200 Ivry-sur-Seine",
-    href: "https://maps.google.com/?q=Ivry-sur-Seine+94200",
-  },
-  {
-    icon: Clock,
-    label: "Horaires",
-    primary: "Lun–Ven : 8h–18h",
-    secondary: "Sam : 8h–12h",
-  },
-];
 
 export default function ContactPage() {
   return (
     <>
-      {/* Page header */}
-      <div className="pt-32 pb-16 bg-[#2C3E50] text-center">
-        <p className="text-[#B8860B] text-xs tracking-[0.25em] uppercase font-medium mb-4">
-          Demande de devis
-        </p>
-        <h1 className="font-serif text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
-          Contactez-nous
-        </h1>
-        <p className="text-white/60 text-lg max-w-xl mx-auto">
-          Devis gratuit et sans engagement. Réponse sous 48h, souvent bien moins.
-        </p>
-      </div>
+      <section className="relative pt-24 sm:pt-32 pb-12 sm:pb-20 bg-primary-900">
+        <div className="absolute inset-0 opacity-20">
+          <Image src="/images/projects/equipe-chantier.png" alt="" fill className="object-cover" sizes="100vw" />
+        </div>
+        <Container className="relative z-10 text-center">
+          <FadeIn>
+            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+              Contactez-nous
+            </h1>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-neutral-200">
+              Devis gratuit et sans engagement — réponse sous 24h
+            </p>
+          </FadeIn>
+        </Container>
+      </section>
 
-      {/* Content */}
-      <section className="py-16 lg:py-24 bg-[#FAFAF5]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
-            {/* Sidebar info */}
+      <section className="py-[clamp(4rem,8vw,6rem)]">
+        <Container>
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-5">
+            {/* Form */}
+            <div className="lg:col-span-3">
+              <FadeIn>
+                <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-6">
+                  Votre Demande de Devis
+                </h2>
+                <ContactForm />
+              </FadeIn>
+            </div>
+
+            {/* Info */}
             <div className="lg:col-span-2">
-              <h2 className="font-serif text-2xl font-bold text-[#2C3E50] mb-8">
-                Nos coordonnées
-              </h2>
-
-              <ul className="space-y-6 mb-10">
-                {contactInfo.map((item) => {
-                  const Icon = item.icon;
-                  const content = (
-                    <div className="flex gap-4">
-                      <div className="w-10 h-10 bg-[#B8860B]/10 flex items-center justify-center shrink-0 mt-0.5">
-                        <Icon className="w-4 h-4 text-[#B8860B]" />
+              <FadeIn delay={0.2}>
+                <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-6">
+                  Nos Coordonnées
+                </h2>
+                <ul className="space-y-5">
+                  {[
+                    {
+                      icon: (
+                        <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                      ),
+                      label: "Téléphone",
+                      value: company.contact.phone,
+                      href: `tel:${company.contact.phone}`,
+                    },
+                    {
+                      icon: (
+                        <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                      ),
+                      label: "Email",
+                      value: company.contact.email,
+                      href: `mailto:${company.contact.email}`,
+                    },
+                    {
+                      icon: (
+                        <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                      ),
+                      label: "Adresse",
+                      value: `${company.address.street}, ${company.address.postalCode} ${company.address.city}`,
+                    },
+                    {
+                      icon: (
+                        <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      ),
+                      label: "Horaires",
+                      value: company.contact.hours,
+                    },
+                  ].map((item) => (
+                    <li key={item.label} className="flex items-start gap-4">
+                      <div className="mt-0.5 h-10 w-10 shrink-0 rounded-xl bg-accent-50 flex items-center justify-center text-accent-600">
+                        {item.icon}
                       </div>
                       <div>
-                        <p className="text-xs text-[#6B7A82] uppercase tracking-wider font-medium mb-0.5">
-                          {item.label}
-                        </p>
-                        <p className="text-sm font-semibold text-[#2C3E50]">{item.primary}</p>
-                        <p className="text-xs text-[#6B7A82] mt-0.5">{item.secondary}</p>
+                        <p className="text-xs font-semibold text-neutral-500 uppercase tracking-wider">{item.label}</p>
+                        {item.href ? (
+                          <a href={item.href} className="text-sm text-neutral-800 hover:text-accent-600 transition-colors">{item.value}</a>
+                        ) : (
+                          <p className="text-sm text-neutral-800">{item.value}</p>
+                        )}
                       </div>
-                    </div>
-                  );
-                  return (
-                    <li key={item.label}>
-                      {item.href ? (
-                        <a
-                          href={item.href}
-                          target={item.href.startsWith("http") ? "_blank" : undefined}
-                          rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                          className="hover:opacity-80 transition-opacity block"
-                        >
-                          {content}
-                        </a>
-                      ) : (
-                        content
-                      )}
                     </li>
-                  );
-                })}
-              </ul>
+                  ))}
+                </ul>
 
-              {/* Map placeholder */}
-              <div className="aspect-[4/3] bg-[#E0D9CE] flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="w-8 h-8 text-[#B8860B] mx-auto mb-2" />
-                  <p className="text-sm text-[#6B7A82]">94200 Ivry-sur-Seine</p>
-                  <a
-                    href="https://maps.google.com/?q=Ivry-sur-Seine+94200"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs text-[#B8860B] underline mt-1 inline-block"
-                  >
-                    Voir sur Google Maps
-                  </a>
+                <div className="mt-8">
+                  <GoogleMap />
                 </div>
-              </div>
-            </div>
-
-            {/* Form */}
-            <div className="lg:col-span-3 bg-white border border-[#E0D9CE] p-8 lg:p-10">
-              <h2 className="font-serif text-2xl font-bold text-[#2C3E50] mb-2">
-                Votre demande de devis
-              </h2>
-              <p className="text-sm text-[#6B7A82] mb-8">
-                Remplissez le formulaire, nous vous rappelons sous 48h avec un devis détaillé.
-              </p>
-              <ContactForm />
+              </FadeIn>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
     </>
   );

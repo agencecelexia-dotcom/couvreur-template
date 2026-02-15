@@ -1,69 +1,48 @@
 import type { Metadata } from "next";
 import { Playfair_Display, DM_Sans } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/footer";
-import { JsonLd } from "@/components/seo/JsonLd";
-import { ScrollProgress } from "@/components/ui/ScrollProgress";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import ScrollProgress from "@/components/ui/ScrollProgress";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-playfair",
   display: "swap",
-  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-playfair",
 });
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-dmsans",
   display: "swap",
+  variable: "--font-dmsans",
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://toitsexcellence.fr"),
   title: {
-    default: "Toits d'Excellence — Couvreur Île-de-France",
-    template: "%s | Toits d'Excellence",
+    default: "Toitures Prestige | Couvreur Artisan en Île-de-France",
+    template: "%s | Toitures Prestige",
   },
   description:
-    "Maître couvreur en Île-de-France depuis 1987. Ardoise naturelle, zinc, tuiles, isolation et zinguerie. Qualibat RGE. Devis gratuit sous 48h.",
+    "Couvreur artisan haut de gamme en Île-de-France. Ardoise naturelle, tuiles terre cuite, zinc — 20 ans d'expertise pour vos toitures neuves et rénovations.",
   keywords: [
-    "couvreur Île-de-France",
-    "couvreur Paris",
-    "rénovation toiture",
-    "ardoise naturelle",
+    "couvreur",
+    "toiture",
+    "ardoise",
     "zinguerie",
     "isolation combles",
-    "Qualibat RGE",
-    "toiture zinc",
+    "rénovation toiture",
+    "couvreur Paris",
+    "Île-de-France",
   ],
-  authors: [{ name: "Toits d'Excellence" }],
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: "https://toitsexcellence.fr",
-    siteName: "Toits d'Excellence",
-    title: "Toits d'Excellence — Couvreur Île-de-France depuis 1987",
+    url: "https://toitures-prestige.fr",
+    siteName: "Toitures Prestige",
+    title: "Toitures Prestige | Couvreur Artisan en Île-de-France",
     description:
-      "Artisans couvreurs certifiés Qualibat RGE. Ardoise, zinc, tuiles, isolation. Devis gratuit sous 48h.",
-    images: [
-      {
-        url: "/images/projects/og-default.png",
-        width: 1200,
-        height: 630,
-        alt: "Toits d'Excellence — Couvreur Île-de-France",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Toits d'Excellence — Couvreur Île-de-France",
-    description: "Artisans couvreurs certifiés. Ardoise, zinc, tuiles. Devis gratuit.",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: { index: true, follow: true },
+      "Couvreur artisan haut de gamme en Île-de-France. Ardoise naturelle, tuiles terre cuite, zinc — 20 ans d'expertise.",
+    images: [{ url: "/images/projects/og-default.png", width: 1200, height: 630 }],
   },
 };
 
@@ -73,11 +52,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr" className={`${playfair.variable} ${dmSans.variable}`}>
-      <body>
+    <html
+      lang="fr"
+      style={{
+        ["--font-playfair" as string]: playfair.variable,
+        ["--font-dmsans" as string]: dmSans.variable,
+      }}
+    >
+      <body className={`${playfair.variable} ${dmSans.variable} antialiased`}>
         <ScrollProgress />
-        <JsonLd />
-        <Navbar />
+        <Header />
         <main>{children}</main>
         <Footer />
       </body>

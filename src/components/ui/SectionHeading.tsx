@@ -1,48 +1,43 @@
+import { cn } from "@/lib/utils";
+
 interface SectionHeadingProps {
-  eyebrow?: string;
   title: string;
   subtitle?: string;
   centered?: boolean;
   light?: boolean;
+  className?: string;
 }
 
-export function SectionHeading({
-  eyebrow,
+export default function SectionHeading({
   title,
   subtitle,
-  centered = false,
+  centered = true,
   light = false,
+  className,
 }: SectionHeadingProps) {
   return (
-    <div className={centered ? "text-center" : ""}>
-      {eyebrow && (
-        <p
-          className={`text-xs tracking-[0.25em] uppercase font-medium mb-3 ${
-            light ? "text-accent-300" : "text-accent-500"
-          }`}
-        >
-          {eyebrow}
-        </p>
-      )}
+    <div className={cn("mb-12 md:mb-16", centered && "text-center", className)}>
       <h2
-        className={`font-serif text-4xl lg:text-5xl font-bold leading-tight mb-4 ${
-          light ? "text-white" : "text-primary-900"
-        }`}
+        className={cn(
+          "text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight",
+          light ? "text-white" : "text-neutral-900"
+        )}
       >
         {title}
       </h2>
-      {centered && (
-        <div
-          className={`w-16 h-[3px] mx-auto mb-5 ${
-            light ? "bg-accent-400" : "bg-accent-500"
-          }`}
-        />
-      )}
+      <div
+        className={cn(
+          "mt-4 h-1 w-16 rounded-full bg-accent-500",
+          centered && "mx-auto"
+        )}
+      />
       {subtitle && (
         <p
-          className={`text-lg leading-relaxed ${
-            light ? "text-neutral-200" : "text-neutral-600"
-          }`}
+          className={cn(
+            "mt-4 max-w-2xl text-lg",
+            light ? "text-neutral-200" : "text-neutral-600",
+            centered && "mx-auto"
+          )}
         >
           {subtitle}
         </p>

@@ -1,45 +1,48 @@
 import type { Metadata } from "next";
-import { ProjectsGrid } from "@/components/realisations/ProjectsGrid";
-import { CtaBand } from "@/components/home/cta-band";
+import Image from "next/image";
+import Container from "@/components/ui/Container";
+import FadeIn from "@/components/animations/FadeIn";
+import ProjectGallery from "@/components/features/ProjectGallery";
+import { projects } from "@/data/projects";
 
 export const metadata: Metadata = {
   title: "Nos Réalisations",
   description:
-    "Découvrez nos réalisations en couverture, zinguerie, rénovation toiture et isolation en Île-de-France. Ardoise naturelle, zinc, tuiles. Photos de chantiers réels.",
-  alternates: { canonical: "https://toitsexcellence.fr/realisations" },
-  openGraph: {
-    title: "Réalisations — Toits d'Excellence",
-    description: "Portfolio de nos chantiers couverture en Île-de-France.",
-    images: [
-      "/images/projects/og-default.png",
-    ],
-  },
+    "Découvrez nos réalisations de toitures en ardoise, tuiles et zinc. Toitures Prestige intervient sur toute l'Île-de-France. Photos de chantiers réels.",
 };
 
 export default function RealisationsPage() {
   return (
     <>
-      {/* Page header */}
-      <div className="pt-32 pb-16 bg-[#2C3E50] text-center">
-        <p className="text-[#B8860B] text-xs tracking-[0.25em] uppercase font-medium mb-4">
-          Portfolio
-        </p>
-        <h1 className="font-serif text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
-          Nos Réalisations
-        </h1>
-        <p className="text-white/60 text-lg max-w-xl mx-auto">
-          Chaque toiture est une signature. Découvrez quelques-uns de nos chantiers récents.
-        </p>
-      </div>
-
-      {/* Grid section */}
-      <section className="py-16 lg:py-24 bg-[#FAFAF5]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ProjectsGrid />
+      <section className="relative pt-24 sm:pt-32 pb-12 sm:pb-20 bg-primary-900">
+        <div className="absolute inset-0 opacity-20">
+          <Image
+            src="/images/projects/ardoise-paris-1.png"
+            alt=""
+            fill
+            className="object-cover"
+            sizes="100vw"
+          />
         </div>
+        <Container className="relative z-10 text-center">
+          <FadeIn>
+            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+              Nos Réalisations
+            </h1>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-neutral-200">
+              Chaque toiture est une signature. Découvrez notre portfolio de chantiers récents.
+            </p>
+          </FadeIn>
+        </Container>
       </section>
 
-      <CtaBand />
+      <section className="py-[clamp(4rem,8vw,8rem)]">
+        <Container>
+          <FadeIn>
+            <ProjectGallery projects={projects} />
+          </FadeIn>
+        </Container>
+      </section>
     </>
   );
 }

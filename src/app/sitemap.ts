@@ -1,23 +1,35 @@
 import type { MetadataRoute } from "next";
 import { projects } from "@/data/projects";
+import { services } from "@/data/services";
+import { blogPosts } from "@/data/blog-posts";
 
-const BASE = "https://toitsexcellence.fr";
+const BASE_URL = "https://toitures-prestige.fr";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes: MetadataRoute.Sitemap = [
-    { url: BASE, lastModified: new Date(), changeFrequency: "weekly", priority: 1 },
-    { url: `${BASE}/services`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BASE}/realisations`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.8 },
-    { url: `${BASE}/a-propos`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/contact`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+  return [
+    { url: BASE_URL, lastModified: new Date(), changeFrequency: "weekly", priority: 1 },
+    { url: `${BASE_URL}/services`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/realisations`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
+    { url: `${BASE_URL}/blog`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
+    { url: `${BASE_URL}/a-propos`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE_URL}/contact`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    ...services.map((s) => ({
+      url: `${BASE_URL}/services/${s.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+    ...projects.map((p) => ({
+      url: `${BASE_URL}/realisations/${p.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    ...blogPosts.map((b) => ({
+      url: `${BASE_URL}/blog/${b.slug}`,
+      lastModified: new Date(b.publishDate),
+      changeFrequency: "yearly" as const,
+      priority: 0.5,
+    })),
   ];
-
-  const projectRoutes: MetadataRoute.Sitemap = projects.map((p) => ({
-    url: `${BASE}/realisations/${p.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly",
-    priority: 0.6,
-  }));
-
-  return [...staticRoutes, ...projectRoutes];
 }

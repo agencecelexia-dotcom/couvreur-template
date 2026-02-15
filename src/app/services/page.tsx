@@ -1,252 +1,84 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Image from "next/image";
-import { Check, ArrowRight } from "lucide-react";
-import { CtaBand } from "@/components/home/cta-band";
+import Link from "next/link";
+import Container from "@/components/ui/Container";
+import SectionHeading from "@/components/ui/SectionHeading";
+import FadeIn from "@/components/animations/FadeIn";
+import { services } from "@/data/services";
 
 export const metadata: Metadata = {
-  title: "Nos Services de Couverture",
+  title: "Nos Services",
   description:
-    "Couverture neuve, rénovation toiture, zinguerie, isolation combles, démoussage et dépannage urgent. Artisans couvreurs certifiés Qualibat RGE en Île-de-France.",
-  alternates: { canonical: "https://toitsexcellence.fr/services" },
+    "Découvrez nos services de couverture : toiture neuve, rénovation, zinguerie, isolation des combles, dépannage urgence et démoussage en Île-de-France.",
 };
-
-const services = [
-  {
-    id: "couverture-neuve",
-    icon: "🏠",
-    label: "Couverture Neuve",
-    tagline: "L'art de bâtir une toiture pour les siècles",
-    description:
-      "De la charpente à la pose du faîtage, nous réalisons vos toitures neuves avec les matériaux les plus nobles : ardoise naturelle d'Angers, zinc à joint debout, tuiles terre cuite grand feu ou shingle bitumé. Chaque projet est une œuvre pensée pour durer.",
-    benefits: [
-      "Ardoise naturelle, zinc, tuiles ou shingle au choix",
-      "Garantie décennale sur toutes nos prestations",
-      "Écran sous-toiture HPV haute performance",
-      "Isolation thermique intégrée possible",
-      "Accompagnement permis de construire",
-      "Devis détaillé gratuit sous 48h",
-    ],
-    image:
-      "/images/services/couverture-neuve.jpg",
-    imageAlt: "Couverture neuve en ardoise naturelle",
-    imageLeft: false,
-  },
-  {
-    id: "renovation",
-    icon: "🔧",
-    label: "Rénovation Toiture",
-    tagline: "Redonner une vie neuve à votre toiture",
-    description:
-      "Votre toiture est voilée, des ardoises manquent, ou elle accuse simplement son âge ? Notre équipe réalise tous types de rénovations : dépose et repose complète, remplacement sélectif, réfection des noues et des rives. Nous diagnostiquons d'abord la charpente pour garantir la pérennité de l'ensemble.",
-    benefits: [
-      "Diagnostic charpente offert avec chaque devis",
-      "Remplacement sélectif ou réfection totale",
-      "Respect de l'architecture d'origine",
-      "Traitement préventif de la charpente",
-      "Aides MaPrimeRénov' et CEE disponibles",
-      "Délais tenus, chantier propre garanti",
-    ],
-    image:
-      "/images/services/renovation-toiture.jpg",
-    imageAlt: "Rénovation de toiture en tuiles",
-    imageLeft: true,
-  },
-  {
-    id: "demoussage",
-    icon: "💧",
-    label: "Démoussage & Nettoyage",
-    tagline: "Protéger pour préserver",
-    description:
-      "La mousse est l'ennemie silencieuse de votre toiture : elle retient l'humidité, soulève les tuiles et accélère l'usure des matériaux. Notre traitement en trois étapes — démoussage mécanique, lavage haute pression, traitement hydrofuge — redonne à votre toiture une protection maximale.",
-    benefits: [
-      "Démoussage mécanique doux (sans arrachement)",
-      "Lavage haute pression eau chaude",
-      "Traitement hydrofuge 10 ans de protection",
-      "Inspection complète lors de l'intervention",
-      "Nettoyage des gouttières inclus",
-      "Rapport d'état remis après travaux",
-    ],
-    image:
-      "/images/services/demoussage.jpg",
-    imageAlt: "Nettoyage et démoussage de toiture",
-    imageLeft: false,
-  },
-  {
-    id: "zinguerie",
-    icon: "⚡",
-    label: "Zinguerie",
-    tagline: "La précision au service de l'étanchéité",
-    description:
-      "La zinguerie est l'art d'assurer l'étanchéité parfaite de tous les points singuliers de votre toiture : gouttières, chéneaux, faîtages, arêtiers, noues, lucarnes et souches de cheminée. Notre maître zingueur travaille le zinc naturel, le plomb et l'acier inoxydable avec une précision millimétrique.",
-    benefits: [
-      "Gouttières demi-rondes et carrées",
-      "Chéneaux encaissés et pendants",
-      "Solins, arêtes et faîtages",
-      "Lucarnes et châssis de toit",
-      "Zinc naturel, plomb, inox ou aluminium",
-      "Traitement anticorrosion systématique",
-    ],
-    image:
-      "/images/services/zinguerie.jpg",
-    imageAlt: "Zinguerie fine — gouttières en zinc",
-    imageLeft: true,
-  },
-  {
-    id: "isolation",
-    icon: "🌡️",
-    label: "Isolation Combles",
-    tagline: "Le confort thermique pour toute l'année",
-    description:
-      "30% des déperditions thermiques d'une maison passent par le toit. Notre équipe certifiée RGE réalise l'isolation de vos combles perdus par soufflage ou l'isolation des combles aménagés par rouleaux. Nous prenons en charge toutes vos démarches pour les aides financières (MaPrimeRénov', CEE, éco-PTZ).",
-    benefits: [
-      "Combles perdus : soufflage laine de verre ou ouate",
-      "Combles aménagés : sarking ou rampants",
-      "Certification RGE — aides financières garanties",
-      "Résistance thermique R = 7 minimum",
-      "Bilan thermique gratuit avant travaux",
-      "Accompagnement MaPrimeRénov' et CEE",
-    ],
-    image:
-      "/images/services/isolation-toiture.jpg",
-    imageAlt: "Isolation de combles perdus",
-    imageLeft: false,
-  },
-  {
-    id: "depannage",
-    icon: "🚨",
-    label: "Dépannage Urgent",
-    tagline: "À vos côtés dans l'urgence, 7j/7",
-    description:
-      "Fuite après la tempête, ardoises arrachées, infiltration soudaine — votre toiture n'attend pas. Notre équipe d'urgence intervient sur Paris et toute l'Île-de-France sous 24h. Bâchage provisoire immédiat, réparation définitive rapide, rapport d'expertise pour votre assurance.",
-    benefits: [
-      "Intervention sous 24h en Île-de-France",
-      "Disponible 7 jours sur 7, jours fériés inclus",
-      "Bâchage provisoire d'urgence",
-      "Rapport d'expertise pour assurance",
-      "Réparation définitive dans les meilleurs délais",
-      "Devis transparent avant toute intervention",
-    ],
-    image:
-      "/images/services/depannage.jpg",
-    imageAlt: "Intervention d'urgence toiture",
-    imageLeft: true,
-  },
-];
-
-const process = [
-  { step: "01", title: "Contact & Prise en charge", description: "Vous nous appelez ou remplissez le formulaire. Nous vous recontactons sous 2h en semaine." },
-  { step: "02", title: "Visite & Diagnostic", description: "Un couvreur expert se déplace pour inspecter votre toiture et identifier précisément les travaux à réaliser." },
-  { step: "03", title: "Devis détaillé", description: "Vous recevez un devis clair, poste par poste, sans frais cachés. Nous vous conseillons sur les matériaux adaptés." },
-  { step: "04", title: "Réalisation & Livraison", description: "Nos artisans interviennent dans les délais convenus. Chantier propre, finitions soignées, réception avec vous." },
-];
 
 export default function ServicesPage() {
   return (
     <>
-      {/* Page header */}
-      <div className="pt-32 pb-16 bg-[#2C3E50] text-center">
-        <p className="text-[#B8860B] text-xs tracking-[0.25em] uppercase font-medium mb-4">
-          Savoir-faire
-        </p>
-        <h1 className="font-serif text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
-          Nos Services
-        </h1>
-        <p className="text-white/60 text-lg max-w-xl mx-auto">
-          Six métiers, une même exigence d&apos;excellence artisanale.
-        </p>
-      </div>
-
-      {/* Services sections */}
-      {services.map((service) => (
-        <section
-          key={service.id}
-          id={service.id}
-          className="py-20 lg:py-28 bg-[#FAFAF5] border-b border-[#E0D9CE]"
-        >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div
-              className={`grid lg:grid-cols-2 gap-12 lg:gap-16 items-center ${
-                service.imageLeft ? "" : "lg:[&>:first-child]:order-2"
-              }`}
-            >
-              {/* Image */}
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <Image
-                  src={service.image}
-                  alt={service.imageAlt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
-
-              {/* Content */}
-              <div>
-                <p className="text-[#B8860B] text-xs tracking-[0.25em] uppercase font-medium mb-3">
-                  {service.icon} {service.label}
-                </p>
-                <h2 className="font-serif text-3xl lg:text-4xl font-bold text-[#2C3E50] leading-tight mb-4">
-                  {service.tagline}
-                </h2>
-                <p className="text-[#6B7A82] leading-relaxed mb-8">
-                  {service.description}
-                </p>
-
-                {/* Benefits */}
-                <ul className="space-y-3 mb-8">
-                  {service.benefits.map((b) => (
-                    <li key={b} className="flex items-start gap-3">
-                      <Check className="w-4 h-4 text-[#B8860B] mt-0.5 shrink-0" />
-                      <span className="text-sm text-[#2C3E50]">{b}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 h-11 px-6 text-sm font-medium bg-[#B8860B] text-white hover:bg-[#9a700a] transition-colors"
-                >
-                  Demander un devis
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-      ))}
-
-      {/* Process section */}
-      <section className="py-20 lg:py-28 bg-[#2C3E50]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-[#B8860B] text-xs tracking-[0.25em] uppercase font-medium mb-3">
-              Notre méthode
-            </p>
-            <h2 className="font-serif text-4xl lg:text-5xl font-bold text-white">
-              Comment ça se passe ?
-            </h2>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {process.map((step) => (
-              <div key={step.step} className="border border-white/10 p-8">
-                <span className="font-serif text-5xl font-bold text-[#B8860B]/30 block mb-4">
-                  {step.step}
-                </span>
-                <h3 className="font-serif text-lg font-bold text-white mb-3">
-                  {step.title}
-                </h3>
-                <p className="text-sm text-white/60 leading-relaxed">
-                  {step.description}
-                </p>
-              </div>
-            ))}
-          </div>
+      <section className="relative pt-24 sm:pt-32 pb-12 sm:pb-20 bg-primary-900">
+        <div className="absolute inset-0 opacity-20">
+          <Image src="/images/projects/grid-couverture.png" alt="" fill className="object-cover" sizes="100vw" />
         </div>
+        <Container className="relative z-10 text-center">
+          <FadeIn>
+            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+              Nos Services
+            </h1>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-neutral-200">
+              Un savoir-faire complet au service de votre toiture
+            </p>
+          </FadeIn>
+        </Container>
       </section>
 
-      <CtaBand />
+      <section className="py-[clamp(4rem,8vw,8rem)]">
+        <Container>
+          <div className="space-y-12 sm:space-y-16 lg:space-y-24">
+            {services.map((service, index) => (
+              <FadeIn key={service.id}>
+                <div className={`flex flex-col gap-8 lg:gap-16 lg:items-center ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}>
+                  <div className="lg:w-1/2">
+                    <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+                      <Image src={service.image} alt={service.title} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+                    </div>
+                  </div>
+                  <div className="lg:w-1/2">
+                    <h2 className="text-3xl md:text-4xl font-bold text-neutral-900">{service.title}</h2>
+                    <div className="mt-4 h-1 w-12 rounded-full bg-accent-500" />
+                    <p className="mt-6 text-neutral-600 leading-relaxed">{service.fullDescription}</p>
+                    <ul className="mt-6 space-y-3">
+                      {service.features.map((feature) => (
+                        <li key={feature} className="flex items-start gap-3 text-neutral-700">
+                          <svg className="mt-1 h-5 w-5 shrink-0 text-accent-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                          </svg>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-8">
+                      <Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-white bg-accent-500 hover:bg-accent-600 rounded-lg transition-colors">
+                        Demander un devis
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-16 bg-primary-50">
+        <Container className="text-center">
+          <FadeIn>
+            <SectionHeading title="Un Projet en Tête ?" subtitle="Contactez-nous pour en discuter. Notre équipe vous conseille et vous accompagne à chaque étape." />
+            <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-accent-500 hover:bg-accent-600 rounded-lg transition-colors">
+              Contactez-nous
+            </Link>
+          </FadeIn>
+        </Container>
+      </section>
     </>
   );
 }

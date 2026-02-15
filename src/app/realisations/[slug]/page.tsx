@@ -2,12 +2,20 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { MapPin, Clock, ArrowLeft, Star, ChevronRight } from "lucide-react";
-import { projects, getProjectBySlug, CATEGORY_LABELS } from "@/data/projects";
-import { CtaBand } from "@/components/home/cta-band";
+import Container from "@/components/ui/Container";
+import Badge from "@/components/ui/Badge";
+import FadeIn from "@/components/animations/FadeIn";
+import BeforeAfterSlider from "@/components/features/BeforeAfterSlider";
+import { projects } from "@/data/projects";
+import { PROJECT_CATEGORY_LABELS } from "@/types";
+import type { Project } from "@/types";
 
 interface Props {
   params: Promise<{ slug: string }>;
+}
+
+function getProjectBySlug(slug: string): Project | undefined {
+  return projects.find((p) => p.slug === slug);
 }
 
 export async function generateStaticParams() {
@@ -20,16 +28,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!project) return {};
   return {
     title: project.title,
-    description: `${CATEGORY_LABELS[project.category]} — ${project.location}, ${project.year}. ${project.description.slice(0, 120)}...`,
+    description: `${PROJECT_CATEGORY_LABELS[project.category]} — ${project.location}. ${project.shortDescription.slice(0, 120)}...`,
     openGraph: {
       title: project.title,
-      description: project.description.slice(0, 160),
-      images: [project.images[0]],
+      description: project.shortDescription.slice(0, 160),
+      images: [project.featuredImage],
     },
   };
 }
 
-export default async function ProjectPage({ params }: Props) {
+export default async function ProjectDetailPage({ params }: Props) {
   const { slug } = await params;
   const project = getProjectBySlug(slug);
   if (!project) notFound();
@@ -38,10 +46,10 @@ export default async function ProjectPage({ params }: Props) {
 
   return (
     <>
-      {/* Hero image */}
+      {/* Hero */}
       <div className="relative h-[55vh] lg:h-[65vh]">
         <Image
-          src={project.images[0]}
+          src={project.featuredImage}
           alt={project.title}
           fill
           className="object-cover"
@@ -52,172 +60,194 @@ export default async function ProjectPage({ params }: Props) {
 
         {/* Breadcrumb */}
         <div className="absolute top-24 left-0 right-0">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Container>
             <Link
               href="/realisations"
               className="inline-flex items-center gap-2 text-white/70 hover:text-white text-sm transition-colors"
             >
-              <ArrowLeft className="w-4 h-4" />
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+              </svg>
               Toutes les réalisations
             </Link>
-          </div>
+          </Container>
         </div>
 
         {/* Title overlay */}
         <div className="absolute bottom-0 left-0 right-0 pb-10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <span className="inline-block text-xs tracking-wider uppercase text-[#B8860B] font-medium mb-2">
-              {CATEGORY_LABELS[project.category]}
+          <Container>
+            <span className="inline-block text-xs tracking-wider uppercase text-accent-400 font-medium mb-2">
+              {PROJECT_CATEGORY_LABELS[project.category]}
             </span>
-            <h1 className="font-serif text-3xl lg:text-5xl font-bold text-white leading-tight">
+            <h1 className="font-heading text-3xl lg:text-5xl font-bold text-white leading-tight">
               {project.title}
             </h1>
-          </div>
+          </Container>
         </div>
       </div>
 
       {/* Content */}
-      <section className="py-16 lg:py-20 bg-[#FAFAF5]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-[clamp(4rem,8vw,6rem)] bg-neutral-50">
+        <Container>
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Main content */}
             <div className="lg:col-span-2">
-              <p className="text-[#6B7A82] leading-relaxed text-lg mb-8">
-                {project.description}
-              </p>
+              <FadeIn>
+                <p className="text-neutral-600 leading-relaxed text-lg mb-8">
+                  {project.fullDescription || project.shortDescription}
+                </p>
 
-              {project.challenges && (
-                <div className="bg-[#F0ECE4] border-l-4 border-[#B8860B] p-6 mb-8">
-                  <p className="font-semibold text-[#2C3E50] mb-2">Défis du chantier</p>
-                  <p className="text-[#6B7A82] text-sm leading-relaxed">
-                    {project.challenges}
-                  </p>
-                </div>
-              )}
+                {project.challenge && (
+                  <div className="bg-primary-50 border-l-4 border-accent-500 p-6 mb-6 rounded-r-lg">
+                    <p className="font-semibold text-primary-900 mb-2">Défi du chantier</p>
+                    <p className="text-neutral-600 text-sm leading-relaxed">{project.challenge}</p>
+                  </div>
+                )}
 
-              {/* Gallery */}
-              {project.images.length > 1 && (
-                <div className="grid grid-cols-2 gap-3 mb-10">
-                  {project.images.slice(1).map((img, i) => (
-                    <div key={i} className="relative aspect-[4/3] overflow-hidden">
-                      <Image
-                        src={img}
-                        alt={`${project.title} — photo ${i + 2}`}
-                        fill
-                        className="object-cover hover:scale-105 transition-transform duration-500"
-                        sizes="(max-width: 1024px) 50vw, 33vw"
-                      />
-                    </div>
-                  ))}
-                </div>
-              )}
+                {project.solution && (
+                  <div className="bg-accent-50 border-l-4 border-accent-500 p-6 mb-8 rounded-r-lg">
+                    <p className="font-semibold text-primary-900 mb-2">Notre solution</p>
+                    <p className="text-neutral-600 text-sm leading-relaxed">{project.solution}</p>
+                  </div>
+                )}
 
-              {/* Client testimonial */}
-              {project.clientTestimonial && (
-                <div className="bg-[#2C3E50] p-8">
-                  <Star className="w-5 h-5 text-[#B8860B] mb-4" />
-                  <blockquote className="font-serif text-lg text-white/90 italic leading-relaxed mb-4">
-                    &ldquo;{project.clientTestimonial.text}&rdquo;
-                  </blockquote>
-                  <p className="text-sm text-[#B8860B] font-medium">
-                    {project.clientTestimonial.author}
-                  </p>
-                </div>
-              )}
+                {/* Before/After slider */}
+                {project.beforeImage && project.afterImage && (
+                  <div className="mb-10">
+                    <h2 className="font-heading text-xl font-bold text-neutral-900 mb-4">
+                      Avant / Après
+                    </h2>
+                    <BeforeAfterSlider
+                      beforeImage={project.beforeImage}
+                      afterImage={project.afterImage}
+                      beforeLabel="Avant"
+                      afterLabel="Après"
+                    />
+                  </div>
+                )}
+
+                {/* Gallery */}
+                {project.images && project.images.length > 1 && (
+                  <div className="grid grid-cols-2 gap-3">
+                    {project.images.slice(1).map((img, i) => (
+                      <div key={i} className="relative aspect-[4/3] overflow-hidden rounded-lg">
+                        <Image
+                          src={img}
+                          alt={`${project.title} — photo ${i + 2}`}
+                          fill
+                          className="object-cover hover:scale-105 transition-transform duration-500"
+                          sizes="(max-width: 1024px) 50vw, 33vw"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </FadeIn>
             </div>
 
             {/* Sidebar */}
             <div className="lg:col-span-1">
-              <div className="sticky top-24 space-y-6">
-                {/* Project details */}
-                <div className="bg-white border border-[#E0D9CE] p-6">
-                  <h2 className="font-serif text-lg font-bold text-[#2C3E50] mb-5">
-                    Détails du chantier
-                  </h2>
-                  <ul className="space-y-4">
-                    {[
-                      { label: "Localisation", value: project.location },
-                      { label: "Année", value: String(project.year) },
-                      { label: "Durée", value: project.duration },
-                      { label: "Surface", value: project.surface },
-                      { label: "Matériau", value: project.material },
-                      { label: "Type de travaux", value: CATEGORY_LABELS[project.category] },
-                    ].map((item) => (
-                      <li key={item.label} className="flex items-start gap-3 border-b border-[#E0D9CE] pb-3 last:border-0 last:pb-0">
-                        <span className="text-xs text-[#6B7A82] uppercase tracking-wider font-medium mt-0.5 w-24 shrink-0">
-                          {item.label}
-                        </span>
-                        <span className="text-sm text-[#2C3E50] font-medium">
-                          {item.value}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+              <FadeIn delay={0.2}>
+                <div className="sticky top-24 space-y-6">
+                  {/* Project details */}
+                  <div className="bg-white border border-neutral-200 rounded-xl p-6 shadow-sm">
+                    <h2 className="font-heading text-lg font-bold text-neutral-900 mb-5">
+                      Détails du chantier
+                    </h2>
+                    <ul className="space-y-4">
+                      {[
+                        { label: "Localisation", value: project.location },
+                        { label: "Année", value: String(project.year) },
+                        { label: "Durée", value: project.duration },
+                        { label: "Surface", value: project.surface },
+                        { label: "Type", value: PROJECT_CATEGORY_LABELS[project.category] },
+                      ].filter(item => item.value).map((item) => (
+                        <li key={item.label} className="flex items-start gap-3 border-b border-neutral-100 pb-3 last:border-0 last:pb-0">
+                          <span className="text-xs text-neutral-500 uppercase tracking-wider font-semibold mt-0.5 w-24 shrink-0">
+                            {item.label}
+                          </span>
+                          <span className="text-sm text-neutral-800 font-medium">{item.value}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
-                {/* CTA */}
-                <div className="bg-[#B8860B] p-6 text-white">
-                  <p className="font-serif text-lg font-bold mb-2">
-                    Un projet similaire ?
-                  </p>
-                  <p className="text-sm text-white/80 mb-5">
-                    Demandez votre devis gratuit. Réponse sous 48h.
-                  </p>
-                  <Link
-                    href="/contact"
-                    className="block text-center py-3 px-4 bg-white text-[#B8860B] text-sm font-medium hover:bg-[#F5F5DC] transition-colors"
-                  >
-                    Demander un devis
-                  </Link>
+                  {/* Services */}
+                  {project.services && project.services.length > 0 && (
+                    <div className="flex flex-wrap gap-2">
+                      {project.services.map((s) => (
+                        <Badge key={s} variant="outline">{s.replace(/-/g, " ")}</Badge>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* CTA */}
+                  <div className="bg-accent-500 rounded-xl p-6 text-white">
+                    <p className="font-heading text-lg font-bold mb-2">
+                      Un projet similaire ?
+                    </p>
+                    <p className="text-sm text-white/80 mb-5">
+                      Demandez votre devis gratuit. Réponse sous 24h.
+                    </p>
+                    <Link
+                      href="/contact"
+                      className="block text-center py-3 px-4 bg-white text-accent-600 text-sm font-semibold hover:bg-accent-50 rounded-lg transition-colors"
+                    >
+                      Demander un devis
+                    </Link>
+                  </div>
                 </div>
-              </div>
+              </FadeIn>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Other projects */}
       {others.length > 0 && (
-        <section className="py-16 bg-[#F0ECE4]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between mb-8">
-              <h2 className="font-serif text-2xl font-bold text-[#2C3E50]">
-                Autres réalisations
-              </h2>
-              <Link
-                href="/realisations"
-                className="flex items-center gap-1 text-sm text-[#B8860B] hover:text-[#9a700a] transition-colors"
-              >
-                Tout voir <ChevronRight className="w-4 h-4" />
-              </Link>
-            </div>
-
-            <div className="grid sm:grid-cols-3 gap-5">
-              {others.map((p) => (
-                <Link key={p.id} href={`/realisations/${p.slug}`} className="group block">
-                  <div className="relative aspect-[4/3] overflow-hidden mb-3">
-                    <Image
-                      src={p.images[0]}
-                      alt={p.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 640px) 100vw, 33vw"
-                    />
-                  </div>
-                  <span className="text-xs text-[#B8860B] uppercase tracking-wider font-medium">
-                    {CATEGORY_LABELS[p.category]}
-                  </span>
-                  <h3 className="font-serif text-base font-bold text-[#2C3E50] group-hover:text-[#B8860B] transition-colors leading-tight mt-1">
-                    {p.title}
-                  </h3>
+        <section className="py-16 bg-primary-50">
+          <Container>
+            <FadeIn>
+              <div className="flex items-center justify-between mb-8">
+                <h2 className="font-heading text-2xl font-bold text-neutral-900">
+                  Autres réalisations
+                </h2>
+                <Link
+                  href="/realisations"
+                  className="flex items-center gap-1 text-sm text-accent-600 hover:text-accent-700 transition-colors font-medium"
+                >
+                  Tout voir
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </Link>
-              ))}
-            </div>
-          </div>
+              </div>
+
+              <div className="grid sm:grid-cols-3 gap-5">
+                {others.map((p) => (
+                  <Link key={p.id} href={`/realisations/${p.slug}`} className="group block">
+                    <div className="relative aspect-[4/3] overflow-hidden rounded-lg mb-3">
+                      <Image
+                        src={p.featuredImage}
+                        alt={p.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 640px) 100vw, 33vw"
+                      />
+                    </div>
+                    <span className="text-xs text-accent-600 uppercase tracking-wider font-semibold">
+                      {PROJECT_CATEGORY_LABELS[p.category]}
+                    </span>
+                    <h3 className="font-heading text-base font-bold text-neutral-900 group-hover:text-accent-600 transition-colors leading-tight mt-1">
+                      {p.title}
+                    </h3>
+                  </Link>
+                ))}
+              </div>
+            </FadeIn>
+          </Container>
         </section>
       )}
-
-      <CtaBand />
     </>
   );
 }

@@ -1,27 +1,28 @@
 import type { Metadata } from "next";
-import { HeroSection } from "@/components/home/hero-section";
-import { CertificationsSection } from "@/components/home/certifications";
-import { ServicesGrid } from "@/components/home/services-grid";
-import { StatsSection } from "@/components/home/stats-section";
-import { TestimonialsCarousel } from "@/components/home/testimonials-carousel";
-import { CtaBand } from "@/components/home/cta-band";
+import HeroSection from "@/components/sections/HeroSection";
+import ServicesOverview from "@/components/sections/ServicesOverview";
+import FeaturedProjects from "@/components/sections/FeaturedProjects";
+import StatsSection from "@/components/sections/StatsSection";
+import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import WhyChooseUs from "@/components/sections/WhyChooseUs";
+import CTASection from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "Couvreur Île-de-France — Toits d'Excellence depuis 1987",
+  title: "Toitures Prestige | Couvreur Artisan en Île-de-France",
   description:
-    "Maître couvreur en Île-de-France. Ardoise naturelle, zinc, tuiles, isolation et zinguerie. Qualibat RGE certifié. Devis gratuit et intervention sous 24h.",
-  alternates: { canonical: "https://toitsexcellence.fr" },
+    "Couvreur artisan haut de gamme en Île-de-France. Ardoise naturelle, tuiles terre cuite, zinc à joint debout — 20 ans d'expertise pour votre toiture.",
 };
 
 export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <CertificationsSection />
-      <ServicesGrid />
+      <ServicesOverview />
+      <FeaturedProjects />
       <StatsSection />
-      <TestimonialsCarousel />
-      <CtaBand />
+      <TestimonialsSection />
+      <WhyChooseUs />
+      <CTASection />
     </>
   );
 }
