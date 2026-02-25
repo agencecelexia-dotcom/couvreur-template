@@ -1,0 +1,105 @@
+# CLIENT.md — Template Demenageur
+# Source unique de verite. Modifier ici, puis lancer : npm run sync-client
+
+## IDENTITE
+
+NOM_ENTREPRISE: "Nom de l'Entreprise"
+NOM_LEGAL: "Nom de l'Entreprise SARL"
+SIRET: "000 000 000 00000"
+METIER: "demenageur"
+METIER_LABEL: "Demenageur"
+GENRE_DIRIGEANT: "M"
+PRENOM_DIRIGEANT: "Prenom"
+NOM_DIRIGEANT: "Nom"
+DIPLOME_DIRIGEANT: "expert en logistique et demenagement"
+ANNEE_CREATION: "2010"
+ANNEES_EXPERIENCE: "15"
+
+## CONTACT
+
+TELEPHONE: "00 00 00 00 00"
+EMAIL: "contact@votre-domaine.fr"
+ADRESSE: "1 Rue de la Paix"
+CODE_POSTAL: "00000"
+VILLE: "Votre Ville"
+DEPARTEMENT: "Votre Departement"
+REGION: "Votre Region"
+PAYS: "France"
+HORAIRES: "Lun-Ven: 8h00-18h00, Sam: 9h00-13h00"
+ZONE_INTERVENTION: "Votre ville et region"
+LATITUDE: "46.603354"
+LONGITUDE: "1.888334"
+
+## BRANDING
+
+COULEUR_PRIMAIRE_HUE: "220"
+COULEUR_PRIMAIRE_900: "oklch(0.22 0.06 220)"
+COULEUR_ACCENT_HUE: "25"
+COULEUR_ACCENT_500: "oklch(0.64 0.16 25)"
+COULEUR_FOND_50: "oklch(0.985 0.005 80)"
+FONT_TITRES: "Playfair Display"
+FONT_CORPS: "DM Sans"
+
+## SEO
+
+DOMAINE: "www.votre-domaine.fr"
+META_TITLE: "Nom de l'Entreprise | Demenageur a Votre Ville"
+META_DESCRIPTION: "Demenageur a Votre Ville. Demenagement local et longue distance, garde-meuble, emballage professionnel. Devis gratuit."
+META_KEYWORDS: "demenageur, demenagement, garde-meuble, monte-meuble, emballage, demenagement professionnel, demenageur haut de gamme"
+SCHEMA_TYPE: "MovingCompany"
+
+## CONTENU
+
+SLOGAN: "Votre Slogan Ici"
+ACCROCHE_HERO: "Votre Demenagement — En Toute Serenite"
+DESCRIPTION_ENTREPRISE: "Votre description d'entreprise. Organisation, transport, installation — un accompagnement complet et sur mesure pour chaque demenagement."
+DESCRIPTION_FOOTER: "Votre description courte pour le footer du site."
+DESCRIPTION_APROPOS: "Fondee par Prenom Nom, votre entreprise est nee d'une passion profonde pour le service et la logistique."
+
+## SERVICES
+
+SERVICE_1_TITRE: "Demenagement Local"
+SERVICE_1_DESC: "Prise en charge complete de votre demenagement dans votre ville et ses alentours, avec soin et efficacite."
+SERVICE_2_TITRE: "Demenagement Longue Distance"
+SERVICE_2_DESC: "Transport securise de vos biens partout en France, avec suivi en temps reel et respect des delais."
+SERVICE_3_TITRE: "Monte-Meuble"
+SERVICE_3_DESC: "Service de monte-meuble professionnel pour les acces difficiles, meubles volumineux et etages eleves."
+SERVICE_4_TITRE: "Garde-Meuble"
+SERVICE_4_DESC: "Stockage securise et climatise de vos biens pendant toute la duree necessaire."
+SERVICE_5_TITRE: "Emballage & Protection"
+SERVICE_5_DESC: "Emballage professionnel de tous vos objets, du plus fragile au plus volumineux, avec materiaux de qualite."
+SERVICE_6_TITRE: "Demenagement Bureau & Pro"
+SERVICE_6_DESC: "Demenagement d'entreprise avec planification minutieuse pour minimiser l'interruption d'activite."
+
+## RESEAUX SOCIAUX
+
+GOOGLE_MAPS_URL: ""
+GOOGLE_REVIEWS_URL: ""
+FACEBOOK_URL: ""
+INSTAGRAM_URL: ""
+LINKEDIN_URL: ""
+PINTEREST_URL: ""
+
+## TEMOIGNAGES
+
+TEMOIGNAGE_1_NOM: "Client Satisfait"
+TEMOIGNAGE_1_VILLE: "Votre Ville"
+TEMOIGNAGE_1_TEXTE: "Nom de l'Entreprise a pris en charge notre demenagement de A a Z. L'equipe etait ponctuelle, soigneuse et tres professionnelle. Rien a redire !"
+TEMOIGNAGE_1_NOTE: "5"
+TEMOIGNAGE_2_NOM: "Famille Dupont"
+TEMOIGNAGE_2_VILLE: "Commune voisine"
+TEMOIGNAGE_2_TEXTE: "Un demenagement sans stress grace a leur organisation impeccable. Tout est arrive en parfait etat. Nous recommandons vivement."
+TEMOIGNAGE_2_NOTE: "5"
+TEMOIGNAGE_3_NOM: "M. Durant"
+TEMOIGNAGE_3_VILLE: "Ville proche"
+TEMOIGNAGE_3_TEXTE: "Demenagement de nos bureaux en un weekend. Zero casse, zero retard. Une equipe au top du professionnalisme."
+TEMOIGNAGE_3_NOTE: "5"
+
+## INTEGRATIONS
+
+N8N_WEBHOOK: ""
+ADMIN_PASSWORD: "1234"
+
+## PHOTOS
+
+PACK_PHOTOS_METIER: "demenageur"

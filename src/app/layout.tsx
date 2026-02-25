@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, DM_Sans } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import ScrollProgress from "@/components/ui/ScrollProgress";
+import LayoutShell from "@/components/layout/LayoutShell";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -60,10 +58,7 @@ export default function RootLayout({
       }}
     >
       <body className={`${playfair.variable} ${dmSans.variable} antialiased`}>
-        <ScrollProgress />
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <LayoutShell>{children}</LayoutShell>
       </body>
     </html>
   );

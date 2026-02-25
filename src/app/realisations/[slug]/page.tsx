@@ -42,6 +42,9 @@ export default async function ProjectDetailPage({ params }: Props) {
   const project = getProjectBySlug(slug);
   if (!project) notFound();
 
+  const currentIndex = projects.findIndex((p) => p.slug === project.slug);
+  const prevProject = currentIndex > 0 ? projects[currentIndex - 1] : null;
+  const nextProject = currentIndex < projects.length - 1 ? projects[currentIndex + 1] : null;
   const others = projects.filter((p) => p.slug !== project.slug).slice(0, 3);
 
   return (
@@ -202,6 +205,52 @@ export default async function ProjectDetailPage({ params }: Props) {
           </div>
         </Container>
       </section>
+
+      {/* Prev / Next navigation */}
+      {(prevProject || nextProject) && (
+        <section className="bg-neutral-50 border-t border-neutral-200">
+          <Container>
+            <div className="flex items-stretch">
+              {prevProject ? (
+                <Link
+                  href={`/realisations/${prevProject.slug}`}
+                  className="group flex-1 flex items-center gap-4 py-6 pr-4 hover:bg-neutral-100 transition-colors"
+                >
+                  <svg className="w-5 h-5 text-neutral-400 group-hover:text-accent-600 transition-colors shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                  <div className="min-w-0">
+                    <p className="text-xs text-neutral-400 uppercase tracking-wider font-semibold">Précédent</p>
+                    <p className="text-sm font-semibold text-neutral-900 group-hover:text-accent-600 transition-colors truncate">
+                      {prevProject.title}
+                    </p>
+                  </div>
+                </Link>
+              ) : (
+                <div className="flex-1" />
+              )}
+              {nextProject ? (
+                <Link
+                  href={`/realisations/${nextProject.slug}`}
+                  className="group flex-1 flex items-center justify-end gap-4 py-6 pl-4 hover:bg-neutral-100 transition-colors text-right"
+                >
+                  <div className="min-w-0">
+                    <p className="text-xs text-neutral-400 uppercase tracking-wider font-semibold">Suivant</p>
+                    <p className="text-sm font-semibold text-neutral-900 group-hover:text-accent-600 transition-colors truncate">
+                      {nextProject.title}
+                    </p>
+                  </div>
+                  <svg className="w-5 h-5 text-neutral-400 group-hover:text-accent-600 transition-colors shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              ) : (
+                <div className="flex-1" />
+              )}
+            </div>
+          </Container>
+        </section>
+      )}
 
       {/* Other projects */}
       {others.length > 0 && (

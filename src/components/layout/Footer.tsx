@@ -120,11 +120,27 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-neutral-500">
-            © {year} {company.legalName} — SIRET {company.siret}
+            &copy; {year} {company.legalName} — SIRET {company.siret}
           </p>
           <div className="flex items-center gap-6">
             <Link href="/mentions-legales" className="text-xs text-neutral-500 hover:text-neutral-400 transition-colors">Mentions légales</Link>
             <Link href="/politique-de-confidentialite" className="text-xs text-neutral-500 hover:text-neutral-400 transition-colors">Confidentialité</Link>
+            <Link href="/admin/dashboard" className="text-xs text-neutral-500 hover:text-neutral-400 transition-colors opacity-40 hover:opacity-100">Admin</Link>
+          </div>
+        </div>
+        <div className="border-t border-white/10">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 text-center">
+            <p className="text-xs text-neutral-500">
+              Site conçu par{" "}
+              <a
+                href="https://agencecelexia.fr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-neutral-400 hover:text-accent-400 transition-colors"
+              >
+                Agence Celexia
+              </a>
+            </p>
           </div>
         </div>
       </div>
