@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, DM_Sans } from "next/font/google";
 import "./globals.css";
 import LayoutShell from "@/components/layout/LayoutShell";
+import { clientConfig } from "@/config/client.config";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -17,29 +18,18 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "Toitures Prestige | Couvreur Artisan en Île-de-France",
-    template: "%s | Toitures Prestige",
+    default: clientConfig.META_TITLE,
+    template: `%s | ${clientConfig.NOM_ENTREPRISE}`,
   },
-  description:
-    "Couvreur artisan haut de gamme en Île-de-France. Ardoise naturelle, tuiles terre cuite, zinc — 20 ans d'expertise pour vos toitures neuves et rénovations.",
-  keywords: [
-    "couvreur",
-    "toiture",
-    "ardoise",
-    "zinguerie",
-    "isolation combles",
-    "rénovation toiture",
-    "couvreur Paris",
-    "Île-de-France",
-  ],
+  description: clientConfig.META_DESCRIPTION,
+  keywords: clientConfig.META_KEYWORDS.split(",").map((k) => k.trim()),
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: "https://toitures-prestige.fr",
-    siteName: "Toitures Prestige",
-    title: "Toitures Prestige | Couvreur Artisan en Île-de-France",
-    description:
-      "Couvreur artisan haut de gamme en Île-de-France. Ardoise naturelle, tuiles terre cuite, zinc — 20 ans d'expertise.",
+    url: `https://${clientConfig.DOMAINE}`,
+    siteName: clientConfig.NOM_ENTREPRISE,
+    title: clientConfig.META_TITLE,
+    description: clientConfig.META_DESCRIPTION,
     images: [{ url: "/images/projects/og-default.png", width: 1200, height: 630 }],
   },
 };

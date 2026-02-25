@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import SplitText from "@/components/animations/SplitText";
+import { clientConfig } from "@/config/client.config";
 
 export default function HeroSection() {
   return (
@@ -12,7 +13,7 @@ export default function HeroSection() {
       <div className="absolute inset-0">
         <Image
           src="/images/hero-toiture.png"
-          alt="Couvreur artisan Toitures Prestige"
+          alt={`${clientConfig.METIER_LABEL} ${clientConfig.NOM_ENTREPRISE}`}
           fill
           className="object-cover"
           priority
@@ -30,11 +31,11 @@ export default function HeroSection() {
           className="text-xs font-semibold tracking-[0.3em] uppercase text-accent-400 mb-6"
           style={{ textShadow: "0 1px 3px rgba(0,0,0,0.5)" }}
         >
-          Couvreur artisan — Île-de-France
+          {clientConfig.METIER_LABEL} — {clientConfig.ZONE_INTERVENTION}
         </motion.p>
 
         <SplitText
-          text="L'Art de la Toiture d'Exception"
+          text={clientConfig.ACCROCHE_HERO}
           as="h1"
           className="font-heading text-[clamp(2.5rem,5vw,4.5rem)] font-bold text-white leading-tight"
           delay={0.4}
@@ -47,7 +48,7 @@ export default function HeroSection() {
           className="mt-6 mx-auto max-w-2xl text-lg text-neutral-200"
           style={{ textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}
         >
-          Ardoise naturelle, tuiles terre cuite, zinc à joint debout — nous protégeons vos maisons avec le savoir-faire des compagnons couvreurs depuis 20 ans.
+          {clientConfig.DESCRIPTION_ENTREPRISE}
         </motion.p>
 
         <motion.div

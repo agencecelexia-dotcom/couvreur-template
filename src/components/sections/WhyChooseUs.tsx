@@ -1,13 +1,14 @@
 import Image from "next/image";
 import FadeUp from "@/components/animations/FadeUp";
 import Container from "@/components/ui/Container";
+import { clientConfig } from "@/config/client.config";
 
 const reasons = [
-  { title: "20 ans d'expertise", desc: "Une équipe de compagnons couvreurs avec une maîtrise technique reconnue." },
-  { title: "Matériaux nobles", desc: "Ardoise d'Angers, tuiles terre cuite, zinc VM — uniquement le meilleur." },
-  { title: "Garantie décennale", desc: "Tous nos travaux sont couverts par une assurance décennale Qualibat." },
-  { title: "Devis transparent", desc: "Un devis détaillé et fixe, sans mauvaises surprises en cours de chantier." },
-  { title: "Suivi personnalisé", desc: "Un interlocuteur dédié de la conception à la livraison finale." },
+  { title: `${clientConfig.ANNEES_EXPERIENCE} ans d'expertise`, desc: "Une équipe expérimentée avec une maîtrise logistique reconnue." },
+  { title: "Matériel professionnel", desc: "Camions équipés, couvertures de protection, matériel de manutention — uniquement du professionnel." },
+  { title: "Assurance tous risques", desc: "Tous vos biens sont couverts par une assurance transport complète." },
+  { title: "Devis transparent", desc: "Un devis détaillé et fixe, sans mauvaises surprises le jour du déménagement." },
+  { title: "Suivi personnalisé", desc: "Un interlocuteur dédié de la planification à l'installation finale." },
 ];
 
 export default function WhyChooseUs() {
@@ -20,7 +21,7 @@ export default function WhyChooseUs() {
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
               <Image
                 src="/images/projects/artisan-ardoise.png"
-                alt="Artisan couvreur Toitures Prestige au travail"
+                alt={`Équipe ${clientConfig.NOM_ENTREPRISE} au travail`}
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -35,7 +36,7 @@ export default function WhyChooseUs() {
                 Pourquoi nous choisir
               </p>
               <h2 className="font-heading text-4xl md:text-5xl font-bold text-neutral-900 mb-8">
-                L&apos;Excellence au Service de Votre Toiture
+                L&apos;Excellence au Service de Votre Déménagement
               </h2>
             </FadeUp>
 

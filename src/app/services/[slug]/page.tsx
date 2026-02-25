@@ -5,6 +5,8 @@ import Link from "next/link";
 import Container from "@/components/ui/Container";
 import FadeIn from "@/components/animations/FadeIn";
 import { services } from "@/data/services";
+import { company } from "@/data/company";
+import { clientConfig } from "@/config/client.config";
 import type { Service } from "@/types";
 
 interface Props {
@@ -122,7 +124,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                       Demandez un devis
                     </h3>
                     <p className="text-neutral-300 text-sm mb-6 leading-relaxed">
-                      Devis gratuit sous 24h. Nos experts se déplacent sur toute l&apos;Île-de-France.
+                      Devis gratuit sous 24h. Nous intervenons sur {clientConfig.ZONE_INTERVENTION}.
                     </p>
                     <Link
                       href="/contact"
@@ -131,7 +133,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                       Obtenir mon devis gratuit
                     </Link>
                     <a
-                      href="tel:+33145678910"
+                      href={`tel:${company.contact.phone}`}
                       className="flex items-center justify-center gap-2 mt-3 py-3 px-4 border border-white/20 hover:border-white/40 text-white text-sm font-medium rounded-lg transition-colors"
                     >
                       <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -148,9 +150,9 @@ export default async function ServiceDetailPage({ params }: Props) {
                     </h3>
                     <ul className="space-y-3">
                       {[
-                        "Garantie décennale",
+                        "Assurance tous risques",
                         "Devis transparent et détaillé",
-                        "Artisans qualifiés Qualibat RGE",
+                        "Équipe professionnelle qualifiée",
                         "Réponse sous 24h",
                       ].map((g) => (
                         <li key={g} className="flex items-center gap-3 text-sm text-neutral-700">

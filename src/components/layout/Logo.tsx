@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { clientConfig } from "@/config/client.config";
 
 interface LogoProps {
   light?: boolean;
@@ -7,6 +8,11 @@ interface LogoProps {
 }
 
 export default function Logo({ light = false, className }: LogoProps) {
+  // Split company name for two-line display (first word + rest)
+  const words = clientConfig.NOM_ENTREPRISE.split(" ");
+  const line1 = words[0] || clientConfig.NOM_ENTREPRISE;
+  const line2 = words.slice(1).join(" ") || "";
+
   return (
     <Link href="/" className={cn("flex items-center gap-2.5 group", className)}>
       <div className="relative shrink-0 transition-transform duration-300 group-hover:scale-105">
@@ -39,16 +45,18 @@ export default function Logo({ light = false, className }: LogoProps) {
             light ? "text-white" : "text-primary-900"
           )}
         >
-          Toitures
+          {line1}
         </p>
-        <p
-          className={cn(
-            "text-xs font-semibold tracking-widest uppercase",
-            light ? "text-accent-300" : "text-accent-600"
-          )}
-        >
-          Prestige
-        </p>
+        {line2 && (
+          <p
+            className={cn(
+              "text-xs font-semibold tracking-widest uppercase",
+              light ? "text-accent-300" : "text-accent-600"
+            )}
+          >
+            {line2}
+          </p>
+        )}
       </div>
     </Link>
   );

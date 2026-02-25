@@ -6,9 +6,9 @@ import BlogCard from "@/components/features/BlogCard";
 import { blogPosts } from "@/data/blog-posts";
 
 export const metadata: Metadata = {
-  title: "Blog & Conseils Toiture",
+  title: "Blog & Conseils Déménagement",
   description:
-    "Conseils d'experts, guides pratiques et actualités sur la couverture, l'entretien de toiture et l'isolation en Île-de-France.",
+    "Conseils d'experts, guides pratiques et actualités sur le déménagement, l'emballage et l'organisation de votre projet.",
 };
 
 export default function BlogPage() {
@@ -30,7 +30,7 @@ export default function BlogPage() {
               Blog & Conseils
             </h1>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-neutral-200">
-              Nos experts partagent leurs connaissances sur la toiture, l&apos;entretien et les matériaux.
+              Nos experts partagent leurs connaissances sur le déménagement, l&apos;emballage et l&apos;organisation.
             </p>
           </FadeIn>
         </Container>

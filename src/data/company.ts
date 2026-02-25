@@ -1,28 +1,29 @@
+import { clientConfig } from "@/config/client.config";
 import type { CompanyInfo } from "@/types";
 
 export const company: CompanyInfo = {
-  name: "Toitures Prestige",
-  legalName: "Toitures Prestige SARL",
-  siret: "987 654 321 00045",
+  name: clientConfig.NOM_ENTREPRISE,
+  legalName: clientConfig.NOM_LEGAL,
+  siret: clientConfig.SIRET,
   address: {
-    street: "12 Rue des Artisans",
-    city: "Paris",
-    postalCode: "75015",
-    region: "Île-de-France",
-    country: "France",
+    street: clientConfig.ADRESSE,
+    city: clientConfig.VILLE,
+    postalCode: clientConfig.CODE_POSTAL,
+    region: clientConfig.REGION,
+    country: clientConfig.PAYS,
   },
   contact: {
-    phone: "+33 1 45 67 89 10",
-    email: "contact@toitures-prestige.fr",
-    hours: "Lun-Ven: 7h30-18h00, Sam: 8h00-12h00",
+    phone: clientConfig.TELEPHONE,
+    email: clientConfig.EMAIL,
+    hours: clientConfig.HORAIRES,
   },
   social: {
-    facebook: "https://facebook.com/toitures-prestige",
-    instagram: "https://instagram.com/toitures.prestige",
-    linkedin: "https://linkedin.com/company/toitures-prestige",
+    facebook: clientConfig.FACEBOOK_URL || undefined,
+    instagram: clientConfig.INSTAGRAM_URL || undefined,
+    linkedin: clientConfig.LINKEDIN_URL || undefined,
   },
   coordinates: {
-    lat: 48.8421,
-    lng: 2.2978,
+    lat: parseFloat(clientConfig.LATITUDE),
+    lng: parseFloat(clientConfig.LONGITUDE),
   },
 };

@@ -5,11 +5,11 @@ import FadeIn from "@/components/animations/FadeIn";
 import ContactForm from "@/components/features/ContactForm";
 import GoogleMap from "@/components/features/GoogleMap";
 import { company } from "@/data/company";
+import { clientConfig } from "@/config/client.config";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description:
-    "Demandez un devis gratuit pour votre toiture. Toitures Prestige intervient sur toute l'Île-de-France.",
+  description: `Demandez un devis gratuit pour votre déménagement. ${clientConfig.NOM_ENTREPRISE} intervient sur ${clientConfig.ZONE_INTERVENTION}.`,
 };
 
 export default function ContactPage() {

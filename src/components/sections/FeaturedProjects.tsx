@@ -18,7 +18,7 @@ export default function FeaturedProjects() {
         <div className="flex items-end justify-between mb-12 md:mb-16">
           <SectionHeading
             title="Nos Réalisations"
-            subtitle="Chaque toiture est une signature. Découvrez nos créations les plus remarquables."
+            subtitle="Chaque déménagement est unique. Découvrez nos réalisations les plus remarquables."
             centered={false}
             className="mb-0"
           />

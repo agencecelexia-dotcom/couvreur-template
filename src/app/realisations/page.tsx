@@ -4,11 +4,11 @@ import Container from "@/components/ui/Container";
 import FadeIn from "@/components/animations/FadeIn";
 import ProjectGallery from "@/components/features/ProjectGallery";
 import { projects } from "@/data/projects";
+import { clientConfig } from "@/config/client.config";
 
 export const metadata: Metadata = {
   title: "Nos Réalisations",
-  description:
-    "Découvrez nos réalisations de toitures en ardoise, tuiles et zinc. Toitures Prestige intervient sur toute l'Île-de-France. Photos de chantiers réels.",
+  description: `Découvrez nos réalisations de déménagements. ${clientConfig.NOM_ENTREPRISE} intervient sur ${clientConfig.ZONE_INTERVENTION}. Photos de projets réels.`,
 };
 
 export default function RealisationsPage() {
@@ -30,7 +30,7 @@ export default function RealisationsPage() {
               Nos Réalisations
             </h1>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-neutral-200">
-              Chaque toiture est une signature. Découvrez notre portfolio de chantiers récents.
+              Chaque déménagement est unique. Découvrez notre portfolio de projets récents.
             </p>
           </FadeIn>
         </Container>

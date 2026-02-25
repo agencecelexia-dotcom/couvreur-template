@@ -2,12 +2,13 @@
 
 import CountUp from "@/components/animations/CountUp";
 import FadeUp from "@/components/animations/FadeUp";
+import { clientConfig } from "@/config/client.config";
 
 const stats = [
-  { value: 20, suffix: "+", label: "Années d'expérience" },
-  { value: 800, suffix: "+", label: "Toitures réalisées" },
+  { value: parseInt(clientConfig.ANNEES_EXPERIENCE, 10), suffix: "+", label: "Années d'expérience" },
+  { value: 500, suffix: "+", label: "Déménagements réalisés" },
   { value: 98, suffix: "%", label: "Clients satisfaits" },
-  { value: 8, suffix: "", label: "Artisans couvreurs" },
+  { value: 8, suffix: "", label: "Professionnels dévoués" },
 ];
 
 export default function StatsSection() {

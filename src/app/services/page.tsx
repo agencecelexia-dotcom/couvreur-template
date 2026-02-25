@@ -5,11 +5,11 @@ import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import FadeIn from "@/components/animations/FadeIn";
 import { services } from "@/data/services";
+import { clientConfig } from "@/config/client.config";
 
 export const metadata: Metadata = {
   title: "Nos Services",
-  description:
-    "Découvrez nos services de couverture : toiture neuve, rénovation, zinguerie, isolation des combles, dépannage urgence et démoussage en Île-de-France.",
+  description: `Découvrez nos services de déménagement : local, longue distance, monte-meuble, garde-meuble, emballage et déménagement professionnel à ${clientConfig.VILLE}.`,
 };
 
 export default function ServicesPage() {
@@ -25,7 +25,7 @@ export default function ServicesPage() {
               Nos Services
             </h1>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-neutral-200">
-              Un savoir-faire complet au service de votre toiture
+              Un savoir-faire complet au service de votre déménagement
             </p>
           </FadeIn>
         </Container>

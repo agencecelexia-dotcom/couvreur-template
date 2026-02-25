@@ -14,7 +14,7 @@ export default function GoogleMap() {
         allowFullScreen
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
-        title="Localisation Toitures Prestige"
+        title="Notre localisation"
       />
     </div>
   );

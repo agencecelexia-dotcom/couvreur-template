@@ -2,6 +2,7 @@ import Link from "next/link";
 import Logo from "./Logo";
 import { services } from "@/data/services";
 import { company } from "@/data/company";
+import { clientConfig } from "@/config/client.config";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -14,7 +15,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Logo light />
             <p className="mt-4 text-sm text-neutral-400 leading-relaxed">
-              Couvreurs artisans depuis 20 ans en Île-de-France. Ardoise, tuiles, zinc — nous maîtrisons tous les matériaux nobles pour votre toiture.
+              {clientConfig.DESCRIPTION_FOOTER}
             </p>
             <div className="mt-6 flex items-center gap-4">
               {company.social.facebook && (

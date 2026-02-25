@@ -6,11 +6,11 @@ import StatsSection from "@/components/sections/StatsSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import CTASection from "@/components/sections/CTASection";
+import { clientConfig } from "@/config/client.config";
 
 export const metadata: Metadata = {
-  title: "Toitures Prestige | Couvreur Artisan en Île-de-France",
-  description:
-    "Couvreur artisan haut de gamme en Île-de-France. Ardoise naturelle, tuiles terre cuite, zinc à joint debout — 20 ans d'expertise pour votre toiture.",
+  title: clientConfig.META_TITLE,
+  description: clientConfig.META_DESCRIPTION,
 };
 
 export default function HomePage() {

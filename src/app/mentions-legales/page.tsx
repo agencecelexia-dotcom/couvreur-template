@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import { company } from "@/data/company";
+import { clientConfig } from "@/config/client.config";
 
 export const metadata: Metadata = {
   title: "Mentions légales",
@@ -27,8 +28,7 @@ export default function MentionsLegalesPage() {
                 <p><strong className="text-neutral-900">Adresse :</strong> {company.address.street}, {company.address.postalCode} {company.address.city}</p>
                 <p><strong className="text-neutral-900">Téléphone :</strong> {company.contact.phone}</p>
                 <p><strong className="text-neutral-900">Email :</strong> {company.contact.email}</p>
-                <p><strong className="text-neutral-900">Directeur de publication :</strong> Jean-Paul Moreau</p>
-                <p><strong className="text-neutral-900">Qualification Qualibat :</strong> RGE n°5412-B</p>
+                <p><strong className="text-neutral-900">Directeur de publication :</strong> {clientConfig.PRENOM_DIRIGEANT} {clientConfig.NOM_DIRIGEANT}</p>
               </div>
             </section>
 
@@ -60,9 +60,8 @@ export default function MentionsLegalesPage() {
                 Limitation de responsabilité
               </h2>
               <p className="text-neutral-600 text-sm leading-relaxed">
-                Toitures Prestige s&apos;efforce d&apos;assurer l&apos;exactitude et la mise
-                à jour des informations diffusées sur ce site. Toutefois, Toitures Prestige
-                ne peut garantir l&apos;exactitude, la précision ou l&apos;exhaustivité des
+                {clientConfig.NOM_ENTREPRISE} s&apos;efforce d&apos;assurer l&apos;exactitude et la mise
+                à jour des informations diffusées sur ce site. Toutefois, {clientConfig.NOM_ENTREPRISE} ne peut garantir l&apos;exactitude, la précision ou l&apos;exhaustivité des
                 informations mises à disposition et décline toute responsabilité pour toute
                 imprécision, inexactitude ou omission.
               </p>

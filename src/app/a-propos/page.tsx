@@ -5,36 +5,36 @@ import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import FadeIn from "@/components/animations/FadeIn";
 import { team } from "@/data/team";
+import { clientConfig } from "@/config/client.config";
 
 export const metadata: Metadata = {
   title: "À Propos — Notre Histoire",
-  description:
-    "Depuis 20 ans, Toitures Prestige protège les toitures d'Île-de-France. Maîtres couvreurs certifiés Qualibat RGE, savoir-faire artisanal transmis de génération en génération.",
+  description: `Depuis ${clientConfig.ANNEES_EXPERIENCE} ans, ${clientConfig.NOM_ENTREPRISE} accompagne vos déménagements dans ${clientConfig.ZONE_INTERVENTION}. Professionnalisme, soin et organisation.`,
 };
 
 const certifications = [
-  { name: "Qualibat RGE", description: "Qualification reconnue garant de l'environnement" },
-  { name: "Garantie Décennale", description: "Assurance obligatoire couvrant 10 ans de travaux" },
-  { name: "Pro BTP", description: "Mutuelle et prévoyance du bâtiment et travaux publics" },
-  { name: "Maître Artisan", description: "Titre officiel attestant l'excellence du savoir-faire" },
+  { name: "Assurance Tous Risques", description: "Couverture complète de vos biens pendant le transport" },
+  { name: "Garantie Satisfaction", description: "Engagement qualité sur chaque prestation réalisée" },
+  { name: "Agrément Professionnel", description: "Entreprise agréée et déclarée au registre des transports" },
+  { name: "Formation Continue", description: "Équipes formées aux dernières techniques de manutention" },
 ];
 
 const timeline = [
-  { year: "2004", event: "Création de l'entreprise par Jean-Paul Moreau à Paris 15ème" },
-  { year: "2007", event: "Obtention de la qualification Qualibat — première certification officielle" },
-  { year: "2010", event: "Extension à toute l'Île-de-France — 3 équipes opérationnelles" },
-  { year: "2015", event: "Certification RGE — spécialisation isolation thermique par l'extérieur" },
-  { year: "2018", event: "300ème chantier. Théo Moreau rejoint l'entreprise après son compagnonnage" },
-  { year: "2021", event: "Partenariat avec les Architectes des Bâtiments de France" },
-  { year: "2024", event: "800 toitures réalisées. 20 ans d'excellence artisanale en Île-de-France" },
+  { year: clientConfig.ANNEE_CREATION, event: `Création de l'entreprise par ${clientConfig.PRENOM_DIRIGEANT} ${clientConfig.NOM_DIRIGEANT} à ${clientConfig.VILLE}` },
+  { year: String(parseInt(clientConfig.ANNEE_CREATION, 10) + 2), event: "Acquisition du premier camion de déménagement — premières missions locales" },
+  { year: String(parseInt(clientConfig.ANNEE_CREATION, 10) + 5), event: `Extension à toute la ${clientConfig.REGION} — 3 équipes opérationnelles` },
+  { year: String(parseInt(clientConfig.ANNEE_CREATION, 10) + 8), event: "Lancement du service longue distance — couverture nationale" },
+  { year: String(parseInt(clientConfig.ANNEE_CREATION, 10) + 10), event: "Ouverture du garde-meuble sécurisé — service de stockage" },
+  { year: String(parseInt(clientConfig.ANNEE_CREATION, 10) + 12), event: "Service monte-meuble professionnel — accès difficiles" },
+  { year: String(parseInt(clientConfig.ANNEE_CREATION, 10) + parseInt(clientConfig.ANNEES_EXPERIENCE, 10)), event: `${clientConfig.ANNEES_EXPERIENCE} ans d'expertise au service de vos déménagements` },
 ];
 
 const values = [
-  "Matériaux sélectionnés chez les meilleurs fabricants",
-  "Artisans formés au Compagnonnage du Tour de France",
+  "Véhicules et matériel professionnel de dernière génération",
+  "Équipes formées et expérimentées",
   "Aucun sous-traitant — toujours nos propres équipes",
-  "Chantier propre et sécurisé, voisinage respecté",
-  "Bilan technique remis après chaque intervention",
+  "Chantier propre et organisé, voisinage respecté",
+  "Inventaire détaillé remis après chaque intervention",
 ];
 
 export default function AboutPage() {
@@ -57,12 +57,10 @@ export default function AboutPage() {
                 Notre histoire
               </p>
               <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-                Artisans depuis<br /> 2004
+                Professionnels depuis<br /> {clientConfig.ANNEE_CREATION}
               </h1>
               <p className="text-neutral-300 text-lg leading-relaxed mb-8">
-                Toitures Prestige est née de la passion d&apos;un homme pour les toits
-                de Paris. Depuis 20 ans, notre famille d&apos;artisans protège et embellit
-                les maisons d&apos;Île-de-France avec l&apos;exigence du compagnonnage.
+                {clientConfig.DESCRIPTION_APROPOS}
               </p>
               <div className="flex flex-wrap gap-4">
                 {certifications.slice(0, 2).map((c) => (
@@ -79,7 +77,7 @@ export default function AboutPage() {
               <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
                 <Image
                   src="/images/projects/equipe-chantier.png"
-                  alt="L'équipe Toitures Prestige sur un chantier"
+                  alt={`L'équipe ${clientConfig.NOM_ENTREPRISE}`}
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -99,7 +97,7 @@ export default function AboutPage() {
               <div className="relative aspect-[3/4] overflow-hidden rounded-xl">
                 <Image
                   src="/images/projects/artisan-ardoise.png"
-                  alt="Détail de toiture en ardoise — savoir-faire artisanal"
+                  alt="Notre équipe en action"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -111,18 +109,18 @@ export default function AboutPage() {
                 Notre philosophie
               </p>
               <h2 className="font-heading text-4xl font-bold text-neutral-900 leading-tight mb-6">
-                Le temps long de l&apos;artisanat
+                Le soin du détail, toujours
               </h2>
               <p className="text-neutral-600 leading-relaxed mb-6">
-                Dans un monde qui va vite, nous choisissons la lenteur du bien fait. Chaque
-                ardoise posée, chaque joint de zinc soudé, chaque faîtage scellé porte la
-                signature de nos compagnons. Une toiture réalisée par Toitures Prestige
-                est pensée pour traverser le siècle.
+                Dans un monde qui va vite, nous choisissons la rigueur et l&apos;attention.
+                Chaque carton emballé, chaque meuble protégé, chaque objet fragile manipulé
+                avec précaution porte la signature de notre équipe. Un déménagement réalisé par {clientConfig.NOM_ENTREPRISE} est
+                pensé pour se dérouler sans accroc.
               </p>
               <p className="text-neutral-600 leading-relaxed mb-8">
-                C&apos;est pourquoi nous refusons les compromis sur les matériaux, les délais
-                irréalistes et les chantiers bâclés. Notre réputation — construite sur 20 ans
-                et 800 chantiers — est notre bien le plus précieux.
+                C&apos;est pourquoi nous refusons les compromis sur le matériel, les délais
+                irréalistes et les prestations bâclées. Notre réputation — construite sur {clientConfig.ANNEES_EXPERIENCE} ans
+                de déménagements — est notre bien le plus précieux.
               </p>
               <ul className="space-y-3">
                 {values.map((item) => (
@@ -145,7 +143,7 @@ export default function AboutPage() {
           <FadeIn>
             <SectionHeading
               title="La Confiance par les Preuves"
-              subtitle="Nos certifications et qualifications garantissent votre sécurité et votre tranquillité d'esprit."
+              subtitle="Nos garanties et engagements pour votre sécurité et votre tranquillité d'esprit."
               centered
             />
           </FadeIn>
@@ -172,14 +170,14 @@ export default function AboutPage() {
         <Container>
           <FadeIn>
             <SectionHeading
-              title="Des Artisans, Pas des Techniciens"
-              subtitle="Notre équipe de compagnons couvreurs partage une passion commune pour le travail bien fait."
+              title="Des Professionnels Passionnés"
+              subtitle="Notre équipe de déménageurs expérimentés partage une passion commune pour le service bien fait."
               centered
             />
           </FadeIn>
           <div className="grid sm:grid-cols-3 gap-8 mt-12">
             {team.map((member, i) => (
-              <FadeIn key={member.name} delay={i * 0.1}>
+              <FadeIn key={member.id} delay={i * 0.1}>
                 <div>
                   <div className="relative aspect-square overflow-hidden rounded-xl mb-5">
                     <Image
@@ -208,7 +206,7 @@ export default function AboutPage() {
           <FadeIn>
             <div className="text-center mb-14">
               <p className="text-accent-400 text-xs tracking-[0.25em] uppercase font-semibold mb-3">
-                20 ans d&apos;histoire
+                {clientConfig.ANNEES_EXPERIENCE} ans d&apos;histoire
               </p>
               <h2 className="font-heading text-4xl font-bold text-white">
                 Notre parcours
@@ -242,10 +240,10 @@ export default function AboutPage() {
         <Container className="text-center">
           <FadeIn>
             <h2 className="font-heading text-3xl font-bold text-white mb-4">
-              Prêt à nous confier votre toiture ?
+              Prêt à nous confier votre déménagement ?
             </h2>
             <p className="text-white/80 mb-8 max-w-xl mx-auto">
-              Contactez-nous pour un devis gratuit. Notre équipe se déplace sur toute l&apos;Île-de-France.
+              Contactez-nous pour un devis gratuit. Notre équipe intervient sur {clientConfig.ZONE_INTERVENTION}.
             </p>
             <Link
               href="/contact"

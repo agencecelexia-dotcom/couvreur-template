@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import FadeUp from "@/components/animations/FadeUp";
 import Container from "@/components/ui/Container";
+import { clientConfig } from "@/config/client.config";
 
 export default function CTASection() {
   return (
@@ -9,7 +10,7 @@ export default function CTASection() {
       <div className="absolute inset-0">
         <Image
           src="/images/projects/equipe-chantier.png"
-          alt="Équipe Toitures Prestige sur chantier"
+          alt={`Équipe ${clientConfig.NOM_ENTREPRISE}`}
           fill
           className="object-cover"
           sizes="100vw"
@@ -19,10 +20,10 @@ export default function CTASection() {
       <Container className="relative z-10 text-center">
         <FadeUp>
           <h2 className="font-heading text-4xl md:text-5xl font-bold text-white">
-            Votre Toiture Mérite le Meilleur
+            {clientConfig.SLOGAN}
           </h2>
           <p className="mt-4 mx-auto max-w-xl text-lg text-neutral-200">
-            Consultation gratuite, devis sans engagement — notre équipe se déplace sur toute l&apos;Île-de-France.
+            Consultation gratuite, devis sans engagement — notre équipe intervient sur {clientConfig.ZONE_INTERVENTION}.
           </p>
           <Link
             href="/contact"

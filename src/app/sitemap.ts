@@ -2,8 +2,9 @@ import type { MetadataRoute } from "next";
 import { projects } from "@/data/projects";
 import { services } from "@/data/services";
 import { blogPosts } from "@/data/blog-posts";
+import { clientConfig } from "@/config/client.config";
 
-const BASE_URL = "https://toitures-prestige.fr";
+const BASE_URL = `https://${clientConfig.DOMAINE}`;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

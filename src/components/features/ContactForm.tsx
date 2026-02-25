@@ -170,7 +170,7 @@ export default function ContactForm() {
         </label>
         <textarea
           id="projectDescription" name="projectDescription" rows={4}
-          placeholder="Décrivez votre projet : type de toiture, surface approximative, problèmes observés..."
+          placeholder="Décrivez votre projet : type de déménagement, volume estimé, contraintes particulières..."
           value={formData.projectDescription} onChange={handleChange}
           className={`w-full rounded-lg border px-4 py-3 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-accent-500 transition-colors ${errors.projectDescription ? "border-red-400 bg-red-50" : "border-neutral-200 bg-white"}`}
         />
@@ -189,7 +189,7 @@ export default function ContactForm() {
           <a href="/politique-de-confidentialite" className="underline hover:text-neutral-900">
             politique de confidentialité
           </a>{" "}
-          de Toitures Prestige. <span className="text-accent-500">*</span>
+          de l&apos;entreprise. <span className="text-accent-500">*</span>
         </label>
       </div>
       {errors.rgpdConsent && <p className="-mt-3 text-xs text-red-500">{errors.rgpdConsent}</p>}

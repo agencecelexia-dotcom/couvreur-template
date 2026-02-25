@@ -1,203 +1,206 @@
 import type { BlogPost } from "@/types";
+import { clientConfig } from "@/config/client.config";
+
+const dirigeant = `${clientConfig.PRENOM_DIRIGEANT} ${clientConfig.NOM_DIRIGEANT}`;
 
 export const blogPosts: BlogPost[] = [
   {
     id: "1",
-    slug: "comment-savoir-si-votre-toiture-a-besoin-renovation",
-    title: "Comment Savoir si Votre Toiture a Besoin d'une Rénovation",
+    slug: "comment-preparer-son-demenagement",
+    title: "Comment Bien Préparer Son Déménagement",
     excerpt:
-      "Infiltrations, tuiles déplacées, mousses envahissantes… Les signaux d'alerte d'une toiture vieillissante et comment y répondre.",
+      "Checklist complète, conseils de tri, calendrier idéal… Tous les réflexes pour un déménagement organisé et sans stress.",
     category: "Conseils",
-    author: "Jean-Paul Moreau",
+    author: dirigeant,
     publishDate: "2024-11-15",
     readingTime: 6,
     featuredImage: "/images/projects/grid-renovation.png",
-    tags: ["rénovation", "diagnostic", "entretien"],
+    tags: ["préparation", "organisation", "conseils"],
     content: [
       {
         type: "paragraph",
         content:
-          "Une toiture en bon état est la première protection de votre maison contre les intempéries. Pourtant, beaucoup de propriétaires attendent les premières infiltrations pour s'en préoccuper. Or, à ce stade, les dégâts sont souvent importants et les réparations beaucoup plus coûteuses.",
+          "Un déménagement réussi se prépare en amont. Plus vous anticipez, plus le jour J se déroulera sereinement. Voici les étapes clés pour ne rien oublier et éviter les mauvaises surprises.",
       },
       {
         type: "heading",
-        content: "Les 5 Signes qui Ne Trompent Pas",
+        content: "Les 5 Étapes Clés d'un Déménagement Réussi",
         level: 2,
       },
       {
         type: "list",
         items: [
-          "Des taches d'humidité apparaissent au plafond ou dans les combles",
-          "Des tuiles ou ardoises sont manquantes, cassées ou déplacées",
-          "La mousse et les lichens recouvrent une grande partie de la toiture",
-          "Les gouttières débordent régulièrement ou se décrochent",
-          "L'âge de votre toiture dépasse 20-25 ans sans rénovation",
+          "Commencer le tri 4 à 6 semaines avant le déménagement",
+          "Rassembler les fournitures d'emballage : cartons, papier bulle, adhésif",
+          "Étiqueter chaque carton avec son contenu et la pièce de destination",
+          "Réserver un stationnement pour le camion le jour J",
+          "Faire un état des lieux de sortie et d'entrée",
         ],
       },
       {
         type: "paragraph",
         content:
-          "Si vous observez l'un ou plusieurs de ces signes, il est temps de faire appel à un couvreur professionnel pour un diagnostic complet. Un bilan précoce peut éviter des réparations d'urgence beaucoup plus onéreuses.",
+          "Si vous manquez de temps ou souhaitez un déménagement clé en main, faites appel à un professionnel. Un déménageur expérimenté prend en charge l'ensemble des opérations, de l'emballage au déballage.",
       },
     ],
   },
   {
     id: "2",
-    slug: "ardoise-tuiles-zinc-quel-materiau-choisir",
-    title: "Ardoise, Tuiles ou Zinc : Quel Matériau Choisir pour Votre Toiture ?",
+    slug: "demenagement-local-vs-longue-distance",
+    title: "Déménagement Local vs Longue Distance : Quelles Différences ?",
     excerpt:
-      "Comparatif complet des trois grands matériaux de couverture : durabilité, esthétique, coût et adaptabilité à votre maison.",
-    category: "Matériaux",
-    author: "Jean-Paul Moreau",
+      "Logistique, coûts, assurances… Comprendre les spécificités de chaque type de déménagement pour mieux anticiper.",
+    category: "Guide",
+    author: dirigeant,
     publishDate: "2024-10-02",
     readingTime: 8,
     featuredImage: "/images/projects/grid-couverture.png",
-    tags: ["ardoise", "tuiles", "zinc", "matériaux"],
+    tags: ["local", "longue distance", "logistique"],
     content: [
       {
         type: "paragraph",
         content:
-          "Le choix du matériau de couverture est une décision importante qui engage votre maison pour plusieurs décennies. Chaque matériau a ses qualités propres, et le bon choix dépend de nombreux facteurs : style architectural, localisation géographique, budget et préférences esthétiques.",
+          "Le choix entre un déménagement local et longue distance impacte directement l'organisation, le budget et les assurances nécessaires. Voici un comparatif pour vous aider à prendre les bonnes décisions.",
       },
       {
         type: "heading",
-        content: "L'Ardoise Naturelle : l'Élégance Intemporelle",
+        content: "Le Déménagement Local : Simplicité et Rapidité",
         level: 2,
       },
       {
         type: "paragraph",
         content:
-          "L'ardoise naturelle, extraite principalement en Anjou et en Espagne, est le matériau roi des toitures haussmanniennes et des demeures de prestige. Sa durée de vie peut dépasser 100 ans, et sa résistance aux cycles gel/dégel est exceptionnelle. Son coût élevé est compensé par sa longévité remarquable.",
+          "Un déménagement local (moins de 50 km) se réalise généralement en une journée. Les allers-retours sont possibles, ce qui réduit le volume de chargement nécessaire. Le coût est principalement lié au nombre de déménageurs mobilisés et au temps passé.",
       },
     ],
   },
   {
     id: "3",
-    slug: "isolation-combles-maprimerénov-guide-complet",
-    title: "Isolation des Combles et MaPrimeRénov' : Le Guide Complet 2025",
+    slug: "proteger-objets-fragiles-demenagement",
+    title: "Comment Protéger Vos Objets Fragiles Pendant un Déménagement",
     excerpt:
-      "Tout ce qu'il faut savoir sur les aides financières pour l'isolation de vos combles : montants, conditions d'éligibilité et démarches.",
-    category: "Aides & Financement",
-    author: "Karim Benali",
+      "Vaisselle, électronique, œuvres d'art… Les techniques d'emballage professionnelles pour éviter la casse.",
+    category: "Conseils",
+    author: "L'équipe",
     publishDate: "2025-01-08",
     readingTime: 10,
     featuredImage: "/images/projects/service-isolation.png",
-    tags: ["isolation", "MaPrimeRénov", "aides", "économies d'énergie"],
+    tags: ["emballage", "protection", "objets fragiles"],
     content: [
       {
         type: "paragraph",
         content:
-          "L'isolation des combles est l'un des travaux de rénovation énergétique les plus rentables : jusqu'à 30% d'économies sur la facture de chauffage pour un investissement qui peut être largement subventionné. Voici tout ce qu'il faut savoir pour profiter des aides en 2025.",
+          "La casse pendant un déménagement est la hantise de tous. Pourtant, avec les bonnes techniques d'emballage et les matériaux adaptés, il est tout à fait possible de protéger efficacement même les objets les plus fragiles.",
       },
       {
         type: "heading",
-        content: "MaPrimeRénov' : Qui Peut en Bénéficier ?",
+        content: "Les Règles d'Or de l'Emballage",
         level: 2,
       },
       {
         type: "paragraph",
         content:
-          "MaPrimeRénov' est accessible à tous les propriétaires occupants et bailleurs, quelle que soit leur situation financière. Le montant de l'aide varie selon le revenu fiscal de référence du foyer et la performance des travaux réalisés. Un couvreur certifié RGE (Reconnu Garant de l'Environnement) est obligatoire pour bénéficier de l'aide.",
+          "Première règle : ne jamais lésiner sur les matériaux. Du papier bulle en quantité suffisante, des cartons solides à double cannelure, et du papier de soie pour les objets délicats. Deuxième règle : chaque objet fragile doit être emballé individuellement, jamais en contact direct avec un autre.",
       },
     ],
   },
   {
     id: "4",
-    slug: "entretien-preventif-toiture-programme-annuel",
-    title: "Entretien Préventif de Toiture : Votre Programme Annuel",
+    slug: "demenagement-entreprise-guide-complet",
+    title: "Déménagement d'Entreprise : Le Guide Complet",
     excerpt:
-      "Un calendrier d'entretien simple pour préserver votre toiture et anticiper les problèmes avant qu'ils ne deviennent coûteux.",
-    category: "Entretien",
-    author: "Jean-Paul Moreau",
+      "Planification, communication interne, matériel informatique… Tout pour réussir le transfert de vos locaux professionnels.",
+    category: "Entreprise",
+    author: dirigeant,
     publishDate: "2024-09-12",
     readingTime: 5,
     featuredImage: "/images/projects/service-demoussage.png",
-    tags: ["entretien", "prévention", "calendrier"],
+    tags: ["entreprise", "bureau", "planification"],
     content: [
       {
         type: "paragraph",
         content:
-          "Comme votre voiture, votre toiture bénéficie d'un entretien régulier. Un programme de maintenance préventive simple peut doubler la durée de vie de votre couverture et vous épargner des réparations d'urgence coûteuses.",
+          "Un déménagement d'entreprise est un projet complexe qui nécessite une planification minutieuse pour minimiser l'impact sur l'activité. De la préparation à la reprise d'activité, voici les étapes essentielles pour un transfert réussi.",
       },
     ],
   },
   {
     id: "5",
-    slug: "zinguerie-role-importance-toiture",
-    title: "La Zinguerie : Rôle et Importance dans l'Étanchéité de Votre Toiture",
+    slug: "garde-meuble-comment-choisir",
+    title: "Garde-Meuble : Comment Choisir la Bonne Solution de Stockage",
     excerpt:
-      "Gouttières, chéneaux, solins, noues… La zinguerie est souvent méconnue mais joue un rôle crucial dans la protection de votre maison.",
-    category: "Technique",
-    author: "Théo Lambert",
+      "Critères de choix, durée, assurances… Tout ce qu'il faut savoir avant de confier vos biens à un garde-meuble.",
+    category: "Guide",
+    author: "L'équipe",
     publishDate: "2024-08-20",
     readingTime: 7,
     featuredImage: "/images/projects/grid-zinguerie.png",
-    tags: ["zinguerie", "gouttières", "étanchéité", "technique"],
+    tags: ["garde-meuble", "stockage", "conseils"],
     content: [
       {
         type: "paragraph",
         content:
-          "La zinguerie désigne l'ensemble des ouvrages métalliques qui assurent l'évacuation des eaux pluviales et l'étanchéité des jonctions de votre toiture. Souvent négligée, elle est pourtant la première ligne de défense contre les infiltrations.",
+          "Que ce soit entre deux logements, pour un voyage prolongé ou simplement par manque de place, le garde-meuble est une solution pratique. Mais tous les espaces de stockage ne se valent pas : voici les critères essentiels pour faire le bon choix.",
       },
     ],
   },
   {
     id: "6",
-    slug: "depannage-toiture-urgence-que-faire",
-    title: "Dépannage Toiture d'Urgence : Que Faire en Cas de Dégât ?",
+    slug: "monte-meuble-quand-est-ce-necessaire",
+    title: "Monte-Meuble : Quand Est-ce Nécessaire et Comment Ça Marche ?",
     excerpt:
-      "Tempête, fuite soudaine, tuile arrachée : les bons réflexes à avoir et comment limiter les dégâts en attendant l'intervention d'un couvreur.",
-    category: "Urgence",
-    author: "Karim Benali",
+      "Étages élevés, escaliers étroits, meubles imposants : découvrez quand et comment utiliser un monte-meuble professionnel.",
+    category: "Technique",
+    author: "L'équipe",
     publishDate: "2024-12-05",
     readingTime: 4,
     featuredImage: "/images/projects/service-depannage.png",
-    tags: ["urgence", "dépannage", "tempête", "assurance"],
+    tags: ["monte-meuble", "technique", "logistique"],
     content: [
       {
         type: "paragraph",
         content:
-          "Une tuile arrachée par le vent, une fuite qui apparaît soudainement après une forte pluie — face à une urgence toiture, chaque heure compte. Voici les actions à mener en priorité pour limiter les dégâts en attendant l'intervention d'un couvreur.",
+          "Un canapé trop large pour l'escalier, un piano au 5e étage, un réfrigérateur américain à monter dans un immeuble ancien… Le monte-meuble est la solution idéale lorsque le passage par les parties communes est impossible ou trop risqué.",
       },
     ],
   },
   {
     id: "7",
-    slug: "renovation-toiture-patrimoine-contraintes",
-    title: "Rénover une Toiture sur Bâtiment Classé : Contraintes et Solutions",
+    slug: "budget-demenagement-estimer-cout",
+    title: "Comment Estimer le Coût de Votre Déménagement",
     excerpt:
-      "ABF, DRAC, Monuments Historiques… La rénovation de toiture sur bâtiment patrimonial impose des contraintes spécifiques. Notre guide complet.",
-    category: "Patrimoine",
-    author: "Jean-Paul Moreau",
+      "Volume, distance, services… Les facteurs qui influencent le prix d'un déménagement et comment obtenir un devis juste.",
+    category: "Budget",
+    author: dirigeant,
     publishDate: "2024-07-18",
     readingTime: 9,
     featuredImage: "/images/projects/artisan-ardoise.png",
-    tags: ["patrimoine", "ABF", "ardoise", "monuments historiques"],
+    tags: ["budget", "devis", "prix", "estimation"],
     content: [
       {
         type: "paragraph",
         content:
-          "Rénover la toiture d'une maison ancienne dans un périmètre protégé est un projet qui demande une expertise spécifique et une connaissance approfondie des réglementations patrimoniales. Chez Toitures Prestige, nous accompagnons régulièrement des propriétaires dans ces projets exigeants.",
+          "Le coût d'un déménagement dépend de nombreux facteurs : le volume de biens à transporter, la distance entre les deux logements, les services complémentaires choisis (emballage, monte-meuble, garde-meuble) et la période de l'année. Voici comment y voir plus clair.",
       },
     ],
   },
   {
     id: "8",
-    slug: "toiture-terrasse-etancheite-solutions",
-    title: "Toiture-Terrasse : Solutions d'Étanchéité et Entretien",
+    slug: "checklist-changement-adresse-demenagement",
+    title: "Changement d'Adresse : La Checklist Complète Après un Déménagement",
     excerpt:
-      "Les toitures-terrasses nécessitent une attention particulière. Découvrez les meilleures solutions d'étanchéité et les conseils d'entretien.",
-    category: "Technique",
-    author: "Théo Lambert",
+      "Administrations, banque, assurances, abonnements… Toutes les démarches à effectuer après votre déménagement.",
+    category: "Pratique",
+    author: "L'équipe",
     publishDate: "2024-06-03",
     readingTime: 6,
     featuredImage: "/images/projects/service-couverture-neuve.png",
-    tags: ["toiture-terrasse", "étanchéité", "membrane", "entretien"],
+    tags: ["adresse", "administration", "checklist", "démarches"],
     content: [
       {
         type: "paragraph",
         content:
-          "Les toitures-terrasses offrent un espace de vie supplémentaire mais requièrent une étanchéité parfaite pour éviter les infiltrations. Les technologies modernes permettent aujourd'hui d'allier durabilité et esthétique pour ce type de couverture.",
+          "Une fois installé dans votre nouveau logement, il reste encore de nombreuses démarches administratives à effectuer. Voici la liste complète pour ne rien oublier et être en règle rapidement.",
       },
     ],
   },
