@@ -95,6 +95,12 @@ TEMOIGNAGE_3_VILLE: "Ville proche"
 TEMOIGNAGE_3_TEXTE: "Demenagement de nos bureaux en un weekend. Zero casse, zero retard. Une equipe au top du professionnalisme."
 TEMOIGNAGE_3_NOTE: "5"
 
+## HEBERGEMENT
+
+HEBERGEUR_NOM: "Vercel Inc."
+HEBERGEUR_ADRESSE: "340 Pine Street, Suite 701, San Francisco, CA 94104, USA"
+HEBERGEUR_SITE: "vercel.com"
+
 ## INTEGRATIONS
 
 N8N_WEBHOOK: ""

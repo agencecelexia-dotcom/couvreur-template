@@ -35,6 +35,9 @@ interface Fields {
   LINKEDIN_URL: string;
   PINTEREST_URL: string;
   GOOGLE_MAPS_URL: string;
+  HEBERGEUR_NOM: string;
+  HEBERGEUR_ADRESSE: string;
+  HEBERGEUR_SITE: string;
   N8N_WEBHOOK: string;
   ADMIN_PASSWORD: string;
 }
@@ -75,6 +78,9 @@ const INITIAL_FIELDS: Fields = {
   LINKEDIN_URL: "",
   PINTEREST_URL: "",
   GOOGLE_MAPS_URL: "",
+  HEBERGEUR_NOM: "Vercel Inc.",
+  HEBERGEUR_ADRESSE: "340 Pine Street, Suite 701, San Francisco, CA 94104, USA",
+  HEBERGEUR_SITE: "vercel.com",
   N8N_WEBHOOK: "",
   ADMIN_PASSWORD: "1234",
 };
@@ -87,6 +93,7 @@ const LONG_FIELDS: (keyof Fields)[] = [
   "META_KEYWORDS",
   "HORAIRES",
   "ZONE_INTERVENTION",
+  "HEBERGEUR_ADRESSE",
 ];
 
 type Toast = { type: "success" | "error"; message: string } | null;
@@ -248,6 +255,13 @@ export default function ContenuTab() {
         <Field label="LinkedIn URL" fieldKey="LINKEDIN_URL" fields={fields} onChange={handleChange} />
         <Field label="Pinterest URL" fieldKey="PINTEREST_URL" fields={fields} onChange={handleChange} />
         <Field label="Google Maps URL" fieldKey="GOOGLE_MAPS_URL" fields={fields} onChange={handleChange} fullWidth />
+      </Section>
+
+      {/* Hébergement (mentions légales) */}
+      <Section title="Hébergement (mentions légales)">
+        <Field label="Nom de l'hébergeur" fieldKey="HEBERGEUR_NOM" fields={fields} onChange={handleChange} />
+        <Field label="Site web hébergeur" fieldKey="HEBERGEUR_SITE" fields={fields} onChange={handleChange} />
+        <Field label="Adresse hébergeur" fieldKey="HEBERGEUR_ADRESSE" fields={fields} onChange={handleChange} fullWidth />
       </Section>
 
       {/* Intégrations */}
