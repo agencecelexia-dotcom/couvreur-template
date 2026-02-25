@@ -48,6 +48,40 @@ export default function RootLayout({
       }}
     >
       <body className={`${playfair.variable} ${dmSans.variable} antialiased`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": clientConfig.SCHEMA_TYPE,
+              name: clientConfig.NOM_ENTREPRISE,
+              description: clientConfig.META_DESCRIPTION,
+              url: `https://${clientConfig.DOMAINE}`,
+              telephone: clientConfig.TELEPHONE,
+              email: clientConfig.EMAIL,
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: clientConfig.ADRESSE,
+                postalCode: clientConfig.CODE_POSTAL,
+                addressLocality: clientConfig.VILLE,
+                addressRegion: clientConfig.REGION,
+                addressCountry: clientConfig.PAYS,
+              },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: clientConfig.LATITUDE,
+                longitude: clientConfig.LONGITUDE,
+              },
+              areaServed: clientConfig.ZONE_INTERVENTION,
+              openingHours: clientConfig.HORAIRES,
+              sameAs: [
+                clientConfig.FACEBOOK_URL,
+                clientConfig.INSTAGRAM_URL,
+                clientConfig.LINKEDIN_URL,
+              ].filter(Boolean),
+            }),
+          }}
+        />
         <LayoutShell>{children}</LayoutShell>
       </body>
     </html>

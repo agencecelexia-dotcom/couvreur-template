@@ -6,6 +6,8 @@ import StatsSection from "@/components/sections/StatsSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import CTASection from "@/components/sections/CTASection";
+import FaqSection from "@/components/sections/FaqSection";
+import ZoneIntervention from "@/components/sections/ZoneIntervention";
 import { clientConfig } from "@/config/client.config";
 
 export const metadata: Metadata = {
@@ -22,6 +24,8 @@ export default function HomePage() {
       <StatsSection />
       <TestimonialsSection />
       <WhyChooseUs />
+      <FaqSection />
+      <ZoneIntervention />
       <CTASection />
     </>
   );

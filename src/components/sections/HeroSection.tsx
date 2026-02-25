@@ -1,16 +1,24 @@
 "use client";
 
+import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import SplitText from "@/components/animations/SplitText";
 import { clientConfig } from "@/config/client.config";
 
 export default function HeroSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0">
+    <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background with parallax */}
+      <motion.div className="absolute inset-0" style={{ y: bgY }}>
         <Image
           src="/images/hero-toiture.png"
           alt={`${clientConfig.METIER_LABEL} ${clientConfig.NOM_ENTREPRISE}`}
@@ -20,7 +28,7 @@ export default function HeroSection() {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/75 to-black/80" />
-      </div>
+      </motion.div>
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">

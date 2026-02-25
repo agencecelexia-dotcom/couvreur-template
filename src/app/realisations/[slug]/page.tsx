@@ -6,6 +6,7 @@ import Container from "@/components/ui/Container";
 import Badge from "@/components/ui/Badge";
 import FadeIn from "@/components/animations/FadeIn";
 import BeforeAfterSlider from "@/components/features/BeforeAfterSlider";
+import Lightbox from "@/components/features/Lightbox";
 import { projects } from "@/data/projects";
 import { PROJECT_CATEGORY_LABELS } from "@/types";
 import type { Project } from "@/types";
@@ -129,21 +130,12 @@ export default async function ProjectDetailPage({ params }: Props) {
                   </div>
                 )}
 
-                {/* Gallery */}
+                {/* Gallery with lightbox */}
                 {project.images && project.images.length > 1 && (
-                  <div className="grid grid-cols-2 gap-3">
-                    {project.images.slice(1).map((img, i) => (
-                      <div key={i} className="relative aspect-[4/3] overflow-hidden rounded-lg">
-                        <Image
-                          src={img}
-                          alt={`${project.title} — photo ${i + 2}`}
-                          fill
-                          className="object-cover hover:scale-105 transition-transform duration-500"
-                          sizes="(max-width: 1024px) 50vw, 33vw"
-                        />
-                      </div>
-                    ))}
-                  </div>
+                  <Lightbox
+                    images={project.images.slice(1)}
+                    alt={project.title}
+                  />
                 )}
               </FadeIn>
             </div>

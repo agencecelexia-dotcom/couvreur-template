@@ -25,7 +25,7 @@ export default function NotFound() {
 
         <p className="text-neutral-500 max-w-md mx-auto mb-10 leading-relaxed">
           La page que vous recherchez n&apos;existe pas ou a été déplacée.
-          Revenez à l&apos;accueil pour découvrir nos services de couverture.
+          Revenez à l&apos;accueil pour découvrir nos services.
         </p>
 
         <Link

@@ -5,6 +5,8 @@ import Link from "next/link";
 import Container from "@/components/ui/Container";
 import Badge from "@/components/ui/Badge";
 import FadeIn from "@/components/animations/FadeIn";
+import ReadingProgress from "@/components/ui/ReadingProgress";
+import ShareButtons from "@/components/ui/ShareButtons";
 import { blogPosts } from "@/data/blog-posts";
 import { formatDate } from "@/lib/utils";
 import type { BlogPost } from "@/types";
@@ -45,6 +47,8 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <>
+      <ReadingProgress />
+
       {/* Hero */}
       <div className="relative h-[50vh] lg:h-[60vh]">
         <Image
@@ -154,6 +158,11 @@ export default async function BlogPostPage({ params }: Props) {
                     </div>
                   </div>
                 )}
+
+                {/* Share */}
+                <div className="mt-8 pt-6 border-t border-neutral-200">
+                  <ShareButtons title={post.title} />
+                </div>
               </FadeIn>
             </div>
 
