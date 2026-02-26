@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: clientConfig.NOM_ENTREPRISE,
     title: clientConfig.META_TITLE,
     description: clientConfig.META_DESCRIPTION,
-    images: [{ url: "/images/projects/og-default.png", width: 1200, height: 630 }],
+    images: [{ url: "/images/og-default.png", width: 1200, height: 630 }],
   },
 };
 

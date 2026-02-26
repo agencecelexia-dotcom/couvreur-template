@@ -9,7 +9,7 @@ import { clientConfig } from "@/config/client.config";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: `Demandez un devis gratuit pour votre déménagement. ${clientConfig.NOM_ENTREPRISE} intervient sur ${clientConfig.ZONE_INTERVENTION}.`,
+  description: `Demandez un devis gratuit pour vos travaux de toiture. ${clientConfig.NOM_ENTREPRISE} intervient sur ${clientConfig.ZONE_INTERVENTION}.`,
 };
 
 export default function ContactPage() {

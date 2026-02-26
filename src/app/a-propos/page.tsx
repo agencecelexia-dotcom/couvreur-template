@@ -113,14 +113,14 @@ export default function AboutPage() {
               </h2>
               <p className="text-neutral-600 leading-relaxed mb-6">
                 Dans un monde qui va vite, nous choisissons la rigueur et l&apos;attention.
-                Chaque carton emballé, chaque meuble protégé, chaque objet fragile manipulé
-                avec précaution porte la signature de notre équipe. Un déménagement réalisé par {clientConfig.NOM_ENTREPRISE} est
-                pensé pour se dérouler sans accroc.
+                Chaque ardoise posee, chaque solin facade, chaque element de zinguerie
+                realise avec precision porte la signature de notre equipe. Une toiture realisee par {clientConfig.NOM_ENTREPRISE} est
+                pensee pour durer des decennies.
               </p>
               <p className="text-neutral-600 leading-relaxed mb-8">
-                C&apos;est pourquoi nous refusons les compromis sur le matériel, les délais
-                irréalistes et les prestations bâclées. Notre réputation — construite sur {clientConfig.ANNEES_EXPERIENCE} ans
-                de déménagements — est notre bien le plus précieux.
+                C&apos;est pourquoi nous refusons les compromis sur les materiaux, les delais
+                irrealistes et les prestations baclees. Notre reputation — construite sur {clientConfig.ANNEES_EXPERIENCE} ans
+                de chantiers de couverture — est notre bien le plus precieux.
               </p>
               <ul className="space-y-3">
                 {values.map((item) => (
@@ -171,31 +171,53 @@ export default function AboutPage() {
           <FadeIn>
             <SectionHeading
               title="Des Professionnels Passionnés"
-              subtitle="Notre équipe de déménageurs expérimentés partage une passion commune pour le service bien fait."
+              subtitle="Notre equipe de couvreurs experimentes partage une passion commune pour le travail bien fait."
               centered
             />
           </FadeIn>
-          <div className="grid sm:grid-cols-3 gap-8 mt-12">
-            {team.map((member, i) => (
-              <FadeIn key={member.id} delay={i * 0.1}>
-                <div>
-                  <div className="relative aspect-square overflow-hidden rounded-xl mb-5">
+          <div className="grid lg:grid-cols-2 gap-12 items-center mt-12">
+            {/* Dirigeant */}
+            {team.map((member) => (
+              <FadeIn key={member.id}>
+                <div className="flex flex-col sm:flex-row gap-6 items-start">
+                  <div className="relative w-40 h-40 sm:w-48 sm:h-48 shrink-0 overflow-hidden rounded-xl">
                     <Image
                       src={member.photo}
                       alt={member.name}
                       fill
-                      className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
-                      sizes="(max-width: 640px) 100vw, 33vw"
+                      className="object-cover"
+                      sizes="200px"
                     />
                   </div>
-                  <h3 className="font-heading text-xl font-bold text-neutral-900 mb-1">
-                    {member.name}
-                  </h3>
-                  <p className="text-accent-600 text-sm font-semibold mb-3">{member.role}</p>
-                  <p className="text-sm text-neutral-600 leading-relaxed">{member.bio}</p>
+                  <div>
+                    <h3 className="font-heading text-2xl font-bold text-neutral-900 mb-1">
+                      {member.name}
+                    </h3>
+                    <p className="text-accent-600 text-sm font-semibold mb-3">{member.role}</p>
+                    <p className="text-sm text-neutral-600 leading-relaxed">{member.bio}</p>
+                    <div className="flex flex-wrap gap-2 mt-4">
+                      {member.specialties.map((s) => (
+                        <span key={s} className="rounded-full bg-primary-50 px-3 py-1 text-xs font-medium text-primary-900">
+                          {s}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </FadeIn>
             ))}
+            {/* Team photo */}
+            <FadeIn delay={0.15}>
+              <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+                <Image
+                  src="/images/projects/equipe-chantier.png"
+                  alt={`L'equipe ${clientConfig.NOM_ENTREPRISE} sur un chantier`}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
+            </FadeIn>
           </div>
         </Container>
       </section>
@@ -240,7 +262,7 @@ export default function AboutPage() {
         <Container className="text-center">
           <FadeIn>
             <h2 className="font-heading text-3xl font-bold text-white mb-4">
-              Prêt à nous confier votre déménagement ?
+              Prêt à nous confier votre toiture ?
             </h2>
             <p className="text-white/80 mb-8 max-w-xl mx-auto">
               Contactez-nous pour un devis gratuit. Notre équipe intervient sur {clientConfig.ZONE_INTERVENTION}.

@@ -17,7 +17,7 @@ export default function ServicesPage() {
     <>
       <section className="relative pt-24 sm:pt-32 pb-12 sm:pb-20 bg-primary-900">
         <div className="absolute inset-0 opacity-20">
-          <Image src="/images/projects/grid-couverture.png" alt="" fill className="object-cover" sizes="100vw" />
+          <Image src="/images/projects/equipe-chantier.png" alt="" fill className="object-cover" sizes="100vw" />
         </div>
         <Container className="relative z-10 text-center">
           <FadeIn>
@@ -25,7 +25,7 @@ export default function ServicesPage() {
               Nos Services
             </h1>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-neutral-200">
-              Un savoir-faire complet au service de votre déménagement
+              Un savoir-faire complet au service de votre toiture
             </p>
           </FadeIn>
         </Container>

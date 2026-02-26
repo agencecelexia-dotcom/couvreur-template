@@ -19,10 +19,7 @@ export const projects: Project[] = [
     images: [
       "/images/projects/projet-ardoise-1.png",
       "/images/projects/projet-ardoise-2.png",
-      "/images/projects/projet-ardoise-3.png",
     ],
-    beforeImage: "/images/projects/p1-before.jpg",
-    afterImage: "/images/projects/p1-after.jpg",
     surface: "200 m²",
     duration: "3 semaines",
     location: clientConfig.VILLE,
@@ -47,10 +44,7 @@ export const projects: Project[] = [
     images: [
       "/images/projects/projet-tuiles-1.png",
       "/images/projects/projet-tuiles-2.png",
-      "/images/projects/projet-tuiles-3.png",
     ],
-    beforeImage: "/images/projects/p2-before.jpg",
-    afterImage: "/images/projects/p2-after.jpg",
     surface: "140 m²",
     duration: "2 semaines",
     location: `${clientConfig.VILLE} et environs`,
@@ -75,68 +69,13 @@ export const projects: Project[] = [
     images: [
       "/images/projects/projet-zinc-1.png",
       "/images/projects/projet-zinc-2.png",
-      "/images/projects/projet-zinc-3.png",
     ],
-    beforeImage: "/images/projects/p3-before.jpg",
-    afterImage: "/images/projects/p3-after.jpg",
     surface: "65 m²",
     duration: "10 jours",
     location: clientConfig.VILLE,
     year: 2024,
     featured: true,
     services: ["couverture-neuve", "zinguerie"],
-  },
-  {
-    id: "zinguerie-1",
-    slug: "zinguerie-complete-immeuble",
-    title: "Zinguerie Complète — Immeuble de Rapport",
-    shortDescription:
-      "Remplacement integral de la zinguerie d'un immeuble de 4 etages : gouttieres, cheneaux, descentes EP et dauphins en zinc.",
-    fullDescription:
-      "Renovation complete du systeme d'evacuation des eaux pluviales d'un immeuble de rapport de 4 etages. Depose de l'ancienne zinguerie en zinc oxyde, fabrication sur mesure des cheneaux encaisses, pose de gouttieres havraises, descentes EP et dauphins. Ensemble realise en zinc naturel pre-patine pour une integration esthetique immediate.",
-    challenge:
-      "Travail en hauteur sur un immeuble de 4 etages en centre-ville. Cheneaux encaisses necessitant un travail de precision. Coordination avec la copropriete pour les coupures d'eau pluviale.",
-    solution:
-      "Installation d'un echafaudage de pied securise sur toute la facade. Fabrication des cheneaux sur mesure en atelier avec pente integree. Planning de travaux concerte avec le syndic pour minimiser la gene.",
-    category: "zinguerie",
-    featuredImage: "/images/projects/zinguerie-immeuble-1.png",
-    images: [
-      "/images/projects/zinguerie-immeuble-1.png",
-      "/images/projects/zinguerie-immeuble-2.png",
-    ],
-    surface: "120 ml",
-    duration: "2 semaines",
-    location: clientConfig.VILLE,
-    year: 2023,
-    featured: false,
-    services: ["zinguerie"],
-  },
-  {
-    id: "isolation-1",
-    slug: "isolation-sarking-combles",
-    title: "Isolation Sarking — Combles Aménageables",
-    shortDescription:
-      "Isolation par l'exterieur (sarking) d'une toiture de 160 m² pour l'amenagement de combles habitables, avec couverture en tuiles plates.",
-    fullDescription:
-      "Projet d'isolation par l'exterieur (technique du sarking) pour permettre l'amenagement des combles d'une maison individuelle. Depose de la couverture existante, pose de panneaux isolants rigides en polyurethane (R=6,5) sur le voligeage, puis repose de la couverture en tuiles plates. Cette technique permet d'isoler sans perdre de surface habitable sous les combles.",
-    challenge:
-      "Maintien de l'habitation occupee pendant les travaux. Temps d'intervention limite en raison de l'exposition aux intemperies pendant la phase de decouvrement. Volume de toiture important necessitant une logistique optimisee.",
-    solution:
-      "Organisation du chantier par demi-versant pour limiter la surface decouverte. Protection provisoire par bache en fin de journee. Livraison des panneaux isolants en quantite calculee au plus juste pour chaque phase.",
-    category: "isolation",
-    featuredImage: "/images/projects/isolation-combles-1.png",
-    images: [
-      "/images/projects/isolation-combles-1.png",
-      "/images/projects/isolation-combles-2.png",
-    ],
-    beforeImage: "/images/projects/p4-before.jpg",
-    afterImage: "/images/projects/p4-after.jpg",
-    surface: "160 m²",
-    duration: "3 semaines",
-    location: `${clientConfig.VILLE} et environs`,
-    year: 2023,
-    featured: false,
-    services: ["isolation-toiture", "couverture-neuve"],
   },
   {
     id: "renovation-1",
@@ -151,16 +90,16 @@ export const projects: Project[] = [
     solution:
       "Bachage d'urgence le jour meme de l'appel. Diagnostic complet par drone avant intervention. Constitution du dossier photographique pour l'assurance. Approvisionnement en ardoises de meme format aupres de notre reseau de fournisseurs.",
     category: "renovation",
-    featuredImage: "/images/projects/depannage-urgence-1.png",
+    featuredImage: "/images/projects/projet-renovation-1.png",
     images: [
-      "/images/projects/depannage-urgence-1.png",
-      "/images/projects/depannage-urgence-2.png",
+      "/images/projects/projet-renovation-1.png",
+      "/images/projects/projet-renovation-2.png",
     ],
     surface: "90 m²",
     duration: "1 semaine",
     location: clientConfig.VILLE,
     year: 2024,
-    featured: false,
+    featured: true,
     services: ["depannage-urgence", "renovation-toiture"],
   },
 ];

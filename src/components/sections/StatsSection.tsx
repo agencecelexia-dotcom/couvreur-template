@@ -6,7 +6,7 @@ import { clientConfig } from "@/config/client.config";
 
 const stats = [
   { value: parseInt(clientConfig.ANNEES_EXPERIENCE, 10), suffix: "+", label: "Années d'expérience" },
-  { value: 500, suffix: "+", label: "Déménagements réalisés" },
+  { value: 500, suffix: "+", label: "Chantiers réalisés" },
   { value: 98, suffix: "%", label: "Clients satisfaits" },
   { value: 8, suffix: "", label: "Professionnels dévoués" },
 ];

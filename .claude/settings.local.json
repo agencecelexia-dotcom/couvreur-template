@@ -12,7 +12,8 @@
       "Bash(git add src/app/blog/[slug]/page.tsx src/app/layout.tsx src/app/not-found.tsx src/app/page.tsx src/app/realisations/[slug]/page.tsx src/components/layout/LayoutShell.tsx src/components/sections/HeroSection.tsx src/components/features/Lightbox.tsx src/components/sections/FaqSection.tsx src/components/sections/ZoneIntervention.tsx src/components/ui/CookieBanner.tsx src/components/ui/FloatingCTA.tsx src/components/ui/ReadingProgress.tsx src/components/ui/ScrollToTop.tsx src/components/ui/ShareButtons.tsx src/data/faq.ts)",
       "Bash(git push)",
       "Bash(xargs grep -l \"demenag\\\\|monte-meuble\\\\|garde-meuble\\\\|moving\\\\|Moving\\\\|truck\")",
-      "Bash(git add -A)"
+      "Bash(git add -A)",
+      "Bash(grep -n \"_template\" \"c:/Users/AA/couvreur-template/src/components/admin/\"*.tsx)"
     ]
   }
 }

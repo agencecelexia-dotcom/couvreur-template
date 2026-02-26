@@ -14,7 +14,7 @@ export const blogPosts: BlogPost[] = [
     author: dirigeant,
     publishDate: "2024-11-15",
     readingTime: 6,
-    featuredImage: "/images/projects/grid-renovation.png",
+    featuredImage: "/images/services/renovation-toiture.jpg",
     tags: ["renovation", "diagnostic", "toiture"],
     content: [
       {
@@ -69,7 +69,7 @@ export const blogPosts: BlogPost[] = [
     author: dirigeant,
     publishDate: "2024-10-02",
     readingTime: 8,
-    featuredImage: "/images/projects/grid-couverture.png",
+    featuredImage: "/images/services/couverture-neuve.jpg",
     tags: ["ardoise", "tuiles", "materiaux", "comparatif"],
     content: [
       {
@@ -124,7 +124,7 @@ export const blogPosts: BlogPost[] = [
     author: "L'equipe",
     publishDate: "2025-01-08",
     readingTime: 10,
-    featuredImage: "/images/projects/service-isolation.png",
+    featuredImage: "/images/services/isolation-toiture.jpg",
     tags: ["isolation", "economies", "energie", "RE2020"],
     content: [
       {
@@ -177,7 +177,7 @@ export const blogPosts: BlogPost[] = [
     author: dirigeant,
     publishDate: "2024-09-12",
     readingTime: 5,
-    featuredImage: "/images/projects/service-demoussage.png",
+    featuredImage: "/images/services/demoussage.jpg",
     tags: ["entretien", "demoussage", "gouttieres", "prevention"],
     content: [
       {
@@ -232,7 +232,7 @@ export const blogPosts: BlogPost[] = [
     author: "L'equipe",
     publishDate: "2024-08-20",
     readingTime: 7,
-    featuredImage: "/images/projects/grid-zinguerie.png",
+    featuredImage: "/images/services/zinguerie.jpg",
     tags: ["zinguerie", "gouttieres", "evacuation", "eaux pluviales"],
     content: [
       {
@@ -287,7 +287,7 @@ export const blogPosts: BlogPost[] = [
     author: "L'equipe",
     publishDate: "2024-12-05",
     readingTime: 4,
-    featuredImage: "/images/projects/service-depannage.png",
+    featuredImage: "/images/services/depannage.jpg",
     tags: ["demoussage", "mousse", "entretien", "hydrofuge"],
     content: [
       {
@@ -400,7 +400,7 @@ export const blogPosts: BlogPost[] = [
     author: "L'equipe",
     publishDate: "2024-06-03",
     readingTime: 6,
-    featuredImage: "/images/projects/service-couverture-neuve.png",
+    featuredImage: "/images/projects/equipe-chantier.png",
     tags: ["charpente", "traitement", "bois", "insectes", "entretien"],
     content: [
       {

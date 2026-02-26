@@ -14,7 +14,7 @@ export default function FaqSection() {
       <Container>
         <SectionHeading
           title="Questions Fréquentes"
-          subtitle="Retrouvez les réponses aux questions les plus posées sur nos services de déménagement."
+          subtitle="Retrouvez les reponses aux questions les plus posees sur nos services de couverture."
         />
         <div className="max-w-3xl mx-auto space-y-3">
           {faqItems.map((item, i) => (

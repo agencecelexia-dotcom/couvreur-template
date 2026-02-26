@@ -30,7 +30,7 @@ export default function RealisationsPage() {
               Nos Réalisations
             </h1>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-neutral-200">
-              Chaque déménagement est unique. Découvrez notre portfolio de projets récents.
+              Chaque chantier est unique. Decouvrez notre portfolio de realisations recentes.
             </p>
           </FadeIn>
         </Container>

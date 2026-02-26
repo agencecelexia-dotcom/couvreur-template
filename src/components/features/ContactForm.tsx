@@ -170,7 +170,7 @@ export default function ContactForm() {
         </label>
         <textarea
           id="projectDescription" name="projectDescription" rows={4}
-          placeholder="Décrivez votre projet : type de déménagement, volume estimé, contraintes particulières..."
+          placeholder="Decrivez votre projet : type de travaux, surface estimee, contraintes particulieres..."
           value={formData.projectDescription} onChange={handleChange}
           className={`w-full rounded-lg border px-4 py-3 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-accent-500 transition-colors ${errors.projectDescription ? "border-red-400 bg-red-50" : "border-neutral-200 bg-white"}`}
         />
