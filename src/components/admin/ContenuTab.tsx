@@ -48,7 +48,7 @@ const INITIAL_FIELDS: Fields = {
   SIRET: "000 000 000 00000",
   PRENOM_DIRIGEANT: "Prénom",
   NOM_DIRIGEANT: "Nom",
-  DIPLOME_DIRIGEANT: "expert en logistique et déménagement",
+  DIPLOME_DIRIGEANT: "artisan couvreur diplome",
   ANNEE_CREATION: "2010",
   ANNEES_EXPERIENCE: "15",
   TELEPHONE: "00 00 00 00 00",
@@ -61,18 +61,18 @@ const INITIAL_FIELDS: Fields = {
   HORAIRES: "Lun-Ven: 8h00-18h00, Sam: 9h00-13h00",
   ZONE_INTERVENTION: "Votre ville et région",
   SLOGAN: "Votre Slogan Ici",
-  ACCROCHE_HERO: "Votre Déménagement — En Toute Sérénité",
+  ACCROCHE_HERO: "Votre Toiture — Entre de Bonnes Mains",
   DESCRIPTION_ENTREPRISE:
-    "Votre description d'entreprise. Organisation, transport, installation — un accompagnement complet et sur mesure pour chaque déménagement.",
+    "Votre description d'entreprise. Couverture, renovation, zinguerie et isolation — un savoir-faire artisanal au service de votre toiture.",
   DESCRIPTION_FOOTER: "Votre description courte pour le footer du site.",
   DESCRIPTION_APROPOS:
-    "Fondée par Prénom Nom, votre entreprise est née d'une passion profonde pour le service et la logistique.",
+    "Fondee par Prenom Nom, votre entreprise est nee d'une passion profonde pour le metier de couvreur et le travail bien fait.",
   DOMAINE: "www.votre-domaine.fr",
-  META_TITLE: "Nom de l'Entreprise | Déménageur à Votre Ville",
+  META_TITLE: "Nom de l'Entreprise | Couvreur a Votre Ville",
   META_DESCRIPTION:
-    "Déménageur à Votre Ville. Déménagement local et longue distance, garde-meuble, emballage professionnel. Devis gratuit.",
+    "Couvreur a Votre Ville. Couverture, renovation de toiture, zinguerie, isolation, depannage urgence. Devis gratuit.",
   META_KEYWORDS:
-    "déménageur, déménagement, garde-meuble, monte-meuble, emballage, déménagement professionnel",
+    "couvreur, toiture, couverture, renovation toiture, zinguerie, isolation toiture, depannage toiture",
   FACEBOOK_URL: "",
   INSTAGRAM_URL: "",
   LINKEDIN_URL: "",

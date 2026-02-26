@@ -9,7 +9,7 @@ import { clientConfig } from "@/config/client.config";
 
 export const metadata: Metadata = {
   title: "Nos Services",
-  description: `Découvrez nos services de déménagement : local, longue distance, monte-meuble, garde-meuble, emballage et déménagement professionnel à ${clientConfig.VILLE}.`,
+  description: `Decouvrez nos services de couverture : toiture neuve, renovation, zinguerie, isolation, depannage urgence et demoussage a ${clientConfig.VILLE}.`,
 };
 
 export default function ServicesPage() {

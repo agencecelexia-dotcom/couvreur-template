@@ -7,27 +7,27 @@ export interface FaqItem {
 
 export const faqItems: FaqItem[] = [
   {
-    question: "Comment obtenir un devis pour mon déménagement ?",
-    answer: `Contactez-nous par téléphone au ${clientConfig.TELEPHONE} ou via notre formulaire en ligne. Nous vous proposerons un rendez-vous gratuit pour évaluer le volume à déménager et vous remettre un devis détaillé et sans engagement.`,
+    question: "Comment obtenir un devis pour mes travaux de toiture ?",
+    answer: `Contactez-nous par telephone au ${clientConfig.TELEPHONE} ou via notre formulaire en ligne. Nous vous proposerons un rendez-vous gratuit pour evaluer l'etat de votre toiture et vous remettre un devis detaille et sans engagement. Le deplacement et le diagnostic sont offerts.`,
   },
   {
-    question: "Combien de temps à l'avance dois-je réserver ?",
-    answer: "Nous recommandons de réserver au moins 3 à 4 semaines à l'avance, surtout en période de forte demande (fin de mois, été, vacances scolaires). Pour les déménagements urgents, contactez-nous — nous ferons notre maximum pour vous trouver un créneau.",
+    question: "Quels materiaux de couverture utilisez-vous ?",
+    answer: "Nous travaillons avec l'ensemble des materiaux de couverture : ardoise naturelle d'Angers ou d'Espagne, tuiles en terre cuite (plates, mecaniques, canal), tuiles en beton, zinc naturel ou pre-patine, cuivre, bac acier et membrane EPDM. Nous vous conseillerons le materiau le plus adapte a votre projet, votre budget et aux contraintes du Plan Local d'Urbanisme.",
   },
   {
-    question: "Mes biens sont-ils assurés pendant le transport ?",
-    answer: "Oui, tous les biens transportés sont couverts par notre assurance responsabilité civile professionnelle. Pour les objets de valeur, nous proposons une assurance complémentaire ad valorem qui couvre la valeur déclarée de chaque bien.",
+    question: "Quelle est la duree moyenne des travaux de toiture ?",
+    answer: "La duree depend de la nature et de l'ampleur des travaux. Un demoussage avec traitement hydrofuge se realise en 1 a 2 jours. Une reparation ponctuelle prend generalement une demi-journee a une journee. Une renovation complete de couverture necessite 2 a 4 semaines selon la surface et la complexite du toit. Nous vous communiquons un planning precis dans notre devis.",
   },
   {
-    question: "Proposez-vous un service d'emballage ?",
-    answer: "Absolument. Notre équipe peut prendre en charge l'intégralité de l'emballage : cartons, papier bulle, housses de protection, démontage et remontage des meubles. Vous n'avez rien à faire, nous nous occupons de tout.",
+    question: "Quelles garanties proposez-vous sur vos travaux ?",
+    answer: "Tous nos travaux de couverture sont couverts par la garantie decennale, obligatoire pour les travaux de gros oeuvre et d'etancheite. Nous disposons egalement d'une assurance responsabilite civile professionnelle. Pour les travaux d'entretien (demoussage, hydrofuge), nous offrons une garantie de resultat de 5 ans.",
   },
   {
-    question: "Quelle est votre zone d'intervention ?",
-    answer: `Nous intervenons principalement sur ${clientConfig.ZONE_INTERVENTION}. Pour les déménagements longue distance, nous couvrons l'ensemble du territoire national. Contactez-nous pour vérifier la disponibilité dans votre secteur.`,
+    question: "Intervenez-vous en urgence en cas de fuite ou de degat de tempete ?",
+    answer: "Oui, nous proposons un service de depannage rapide. En cas de fuite, de tuiles arrachees par le vent ou de tout autre degat necessitant une intervention urgente, nous intervenons sous 24 a 48 heures pour securiser votre toiture par un bachage et eviter l'aggravation des degats. Nous vous accompagnons ensuite dans vos demarches aupres de votre assurance.",
   },
   {
-    question: "Comment est calculé le prix d'un déménagement ?",
-    answer: "Le tarif dépend de plusieurs facteurs : le volume à déménager (en m³), la distance entre les deux adresses, l'accessibilité des logements (étage, ascenseur, distance de portage), et les services complémentaires choisis (emballage, monte-meuble, garde-meuble).",
+    question: "Comment se deroule un chantier de couverture ?",
+    answer: `Apres acceptation du devis, nous planifions le chantier selon vos disponibilites et la meteo. L'intervention commence par l'installation de l'echafaudage et des protections. Nous realisons ensuite la depose de l'ancienne couverture, les travaux de charpente si necessaire, la pose de l'ecran sous-toiture, le liteaunage, la couverture et les finitions de zinguerie. Nous intervenons principalement sur ${clientConfig.ZONE_INTERVENTION}. Un chef d'equipe est present en permanence sur le chantier pour coordonner les travaux et repondre a vos questions.`,
   },
 ];

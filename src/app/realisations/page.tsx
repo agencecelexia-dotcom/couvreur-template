@@ -8,7 +8,7 @@ import { clientConfig } from "@/config/client.config";
 
 export const metadata: Metadata = {
   title: "Nos Réalisations",
-  description: `Découvrez nos réalisations de déménagements. ${clientConfig.NOM_ENTREPRISE} intervient sur ${clientConfig.ZONE_INTERVENTION}. Photos de projets réels.`,
+  description: `Decouvrez nos realisations de couverture et toiture. ${clientConfig.NOM_ENTREPRISE} intervient sur ${clientConfig.ZONE_INTERVENTION}. Photos de projets reels.`,
 };
 
 export default function RealisationsPage() {
@@ -17,7 +17,7 @@ export default function RealisationsPage() {
       <section className="relative pt-24 sm:pt-32 pb-12 sm:pb-20 bg-primary-900">
         <div className="absolute inset-0 opacity-20">
           <Image
-            src="/images/projects/ardoise-paris-1.png"
+            src="/images/projects/projet-ardoise-1.png"
             alt=""
             fill
             className="object-cover"

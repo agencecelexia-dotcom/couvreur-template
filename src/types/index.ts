@@ -38,20 +38,20 @@ export interface Service {
 }
 
 export type ProjectCategory =
-  | "demenagement-local"
-  | "longue-distance"
-  | "monte-meuble"
-  | "garde-meuble"
-  | "emballage"
-  | "demenagement-bureau";
+  | "couverture-ardoise"
+  | "couverture-tuiles"
+  | "couverture-zinc"
+  | "renovation"
+  | "zinguerie"
+  | "isolation";
 
 export const PROJECT_CATEGORY_LABELS: Record<ProjectCategory, string> = {
-  "demenagement-local": "Déménagement local",
-  "longue-distance": "Longue distance",
-  "monte-meuble": "Monte-meuble",
-  "garde-meuble": "Garde-meuble",
-  emballage: "Emballage",
-  "demenagement-bureau": "Déménagement bureau",
+  "couverture-ardoise": "Couverture ardoise",
+  "couverture-tuiles": "Couverture tuiles",
+  "couverture-zinc": "Couverture zinc",
+  renovation: "Rénovation",
+  zinguerie: "Zinguerie",
+  isolation: "Isolation",
 };
 
 export interface Project {

@@ -45,7 +45,7 @@ export default function ZoneIntervention() {
           </FadeUp>
           <FadeUp delay={0.2}>
             <p className="text-center text-sm text-neutral-500 mt-8">
-              Déménagement longue distance ? Nous intervenons sur l&apos;ensemble du territoire national.{" "}
+              Besoin d&apos;un couvreur ? Nous intervenons sur l&apos;ensemble de la region.{" "}
               <a href="/contact" className="text-accent-600 font-medium hover:text-accent-700 underline">
                 Demandez un devis
               </a>

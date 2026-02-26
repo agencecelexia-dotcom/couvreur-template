@@ -9,32 +9,32 @@ import { clientConfig } from "@/config/client.config";
 
 export const metadata: Metadata = {
   title: "À Propos — Notre Histoire",
-  description: `Depuis ${clientConfig.ANNEES_EXPERIENCE} ans, ${clientConfig.NOM_ENTREPRISE} accompagne vos déménagements dans ${clientConfig.ZONE_INTERVENTION}. Professionnalisme, soin et organisation.`,
+  description: `Depuis ${clientConfig.ANNEES_EXPERIENCE} ans, ${clientConfig.NOM_ENTREPRISE} realise vos travaux de couverture et toiture dans ${clientConfig.ZONE_INTERVENTION}. Savoir-faire, qualite et garantie decennale.`,
 };
 
 const certifications = [
-  { name: "Assurance Tous Risques", description: "Couverture complète de vos biens pendant le transport" },
-  { name: "Garantie Satisfaction", description: "Engagement qualité sur chaque prestation réalisée" },
-  { name: "Agrément Professionnel", description: "Entreprise agréée et déclarée au registre des transports" },
-  { name: "Formation Continue", description: "Équipes formées aux dernières techniques de manutention" },
+  { name: "Garantie Decennale", description: "Couverture de vos travaux pendant 10 ans apres reception" },
+  { name: "Qualibat RGE", description: "Certification Reconnu Garant de l'Environnement" },
+  { name: "Assurance RC Pro", description: "Responsabilite civile professionnelle pour tous nos chantiers" },
+  { name: "Formation Continue", description: "Equipes formees aux dernieres techniques de couverture" },
 ];
 
 const timeline = [
-  { year: clientConfig.ANNEE_CREATION, event: `Création de l'entreprise par ${clientConfig.PRENOM_DIRIGEANT} ${clientConfig.NOM_DIRIGEANT} à ${clientConfig.VILLE}` },
-  { year: String(parseInt(clientConfig.ANNEE_CREATION, 10) + 2), event: "Acquisition du premier camion de déménagement — premières missions locales" },
-  { year: String(parseInt(clientConfig.ANNEE_CREATION, 10) + 5), event: `Extension à toute la ${clientConfig.REGION} — 3 équipes opérationnelles` },
-  { year: String(parseInt(clientConfig.ANNEE_CREATION, 10) + 8), event: "Lancement du service longue distance — couverture nationale" },
-  { year: String(parseInt(clientConfig.ANNEE_CREATION, 10) + 10), event: "Ouverture du garde-meuble sécurisé — service de stockage" },
-  { year: String(parseInt(clientConfig.ANNEE_CREATION, 10) + 12), event: "Service monte-meuble professionnel — accès difficiles" },
-  { year: String(parseInt(clientConfig.ANNEE_CREATION, 10) + parseInt(clientConfig.ANNEES_EXPERIENCE, 10)), event: `${clientConfig.ANNEES_EXPERIENCE} ans d'expertise au service de vos déménagements` },
+  { year: clientConfig.ANNEE_CREATION, event: `Creation de l'entreprise par ${clientConfig.PRENOM_DIRIGEANT} ${clientConfig.NOM_DIRIGEANT} a ${clientConfig.VILLE}` },
+  { year: String(parseInt(clientConfig.ANNEE_CREATION, 10) + 2), event: "Premiers chantiers de couverture et renovation de toiture" },
+  { year: String(parseInt(clientConfig.ANNEE_CREATION, 10) + 5), event: `Extension a toute la ${clientConfig.REGION} — 3 equipes operationnelles` },
+  { year: String(parseInt(clientConfig.ANNEE_CREATION, 10) + 8), event: "Obtention de la certification Qualibat RGE — isolation et renovation energetique" },
+  { year: String(parseInt(clientConfig.ANNEE_CREATION, 10) + 10), event: "Developpement du service zinguerie et couverture zinc a joint debout" },
+  { year: String(parseInt(clientConfig.ANNEE_CREATION, 10) + 12), event: "Lancement du service depannage urgence — intervention sous 24-48h" },
+  { year: String(parseInt(clientConfig.ANNEE_CREATION, 10) + parseInt(clientConfig.ANNEES_EXPERIENCE, 10)), event: `${clientConfig.ANNEES_EXPERIENCE} ans d'expertise au service de vos toitures` },
 ];
 
 const values = [
-  "Véhicules et matériel professionnel de dernière génération",
-  "Équipes formées et expérimentées",
-  "Aucun sous-traitant — toujours nos propres équipes",
-  "Chantier propre et organisé, voisinage respecté",
-  "Inventaire détaillé remis après chaque intervention",
+  "Materiaux de qualite selectionnes aupres de fournisseurs reconnus",
+  "Equipes formees et experimentees en couverture traditionnelle",
+  "Aucun sous-traitant — toujours nos propres equipes",
+  "Chantier propre et securise, voisinage respecte",
+  "Garantie decennale sur tous nos travaux de couverture",
 ];
 
 export default function AboutPage() {

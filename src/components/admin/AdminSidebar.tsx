@@ -12,7 +12,7 @@ import {
   Menu,
   X,
   LogOut,
-  Truck,
+  Home,
 } from "lucide-react";
 import { clientConfig } from "@/config/client.config";
 
@@ -50,7 +50,7 @@ export default function AdminSidebar({ activeTab, setActiveTab }: AdminSidebarPr
       <div className="border-b border-white/10 px-5 py-5">
         <div className="flex items-center gap-3">
           <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-accent-500">
-            <Truck size={18} className="text-white" />
+            <Home size={18} className="text-white" />
           </div>
           <div className="min-w-0">
             <p className="truncate text-sm font-bold text-white">{clientConfig.NOM_ENTREPRISE}</p>

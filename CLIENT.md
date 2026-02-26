@@ -1,4 +1,4 @@
-# CLIENT.md — Template Demenageur
+# CLIENT.md — Template Couvreur
 # Source unique de verite. Modifier ici, puis lancer : npm run sync-client
 
 ## IDENTITE
@@ -6,12 +6,12 @@
 NOM_ENTREPRISE: "Nom de l'Entreprise"
 NOM_LEGAL: "Nom de l'Entreprise SARL"
 SIRET: "000 000 000 00000"
-METIER: "demenageur"
-METIER_LABEL: "Demenageur"
+METIER: "couvreur"
+METIER_LABEL: "Couvreur"
 GENRE_DIRIGEANT: "M"
 PRENOM_DIRIGEANT: "Prenom"
 NOM_DIRIGEANT: "Nom"
-DIPLOME_DIRIGEANT: "expert en logistique et demenagement"
+DIPLOME_DIRIGEANT: "couvreur-zingueur diplome, compagnon du devoir"
 ANNEE_CREATION: "2010"
 ANNEES_EXPERIENCE: "15"
 
@@ -43,33 +43,33 @@ FONT_CORPS: "DM Sans"
 ## SEO
 
 DOMAINE: "www.votre-domaine.fr"
-META_TITLE: "Nom de l'Entreprise | Demenageur a Votre Ville"
-META_DESCRIPTION: "Demenageur a Votre Ville. Demenagement local et longue distance, garde-meuble, emballage professionnel. Devis gratuit."
-META_KEYWORDS: "demenageur, demenagement, garde-meuble, monte-meuble, emballage, demenagement professionnel, demenageur haut de gamme"
-SCHEMA_TYPE: "MovingCompany"
+META_TITLE: "Nom de l'Entreprise | Couvreur a Votre Ville"
+META_DESCRIPTION: "Couvreur a Votre Ville. Couverture neuve, renovation de toiture, zinguerie, isolation, depannage urgent. Devis gratuit."
+META_KEYWORDS: "couvreur, couverture, toiture, renovation toiture, zinguerie, isolation toiture, depannage toiture, couvreur professionnel"
+SCHEMA_TYPE: "RoofingContractor"
 
 ## CONTENU
 
 SLOGAN: "Votre Slogan Ici"
-ACCROCHE_HERO: "Votre Demenagement — En Toute Serenite"
-DESCRIPTION_ENTREPRISE: "Votre description d'entreprise. Organisation, transport, installation — un accompagnement complet et sur mesure pour chaque demenagement."
+ACCROCHE_HERO: "Votre Toiture — Entre de Bonnes Mains"
+DESCRIPTION_ENTREPRISE: "Votre description d'entreprise. Couverture, renovation, zinguerie et isolation — un savoir-faire artisanal au service de votre toiture."
 DESCRIPTION_FOOTER: "Votre description courte pour le footer du site."
-DESCRIPTION_APROPOS: "Fondee par Prenom Nom, votre entreprise est nee d'une passion profonde pour le service et la logistique."
+DESCRIPTION_APROPOS: "Fondee par Prenom Nom, votre entreprise est nee d'une passion profonde pour les metiers de la couverture et du batiment."
 
 ## SERVICES
 
-SERVICE_1_TITRE: "Demenagement Local"
-SERVICE_1_DESC: "Prise en charge complete de votre demenagement dans votre ville et ses alentours, avec soin et efficacite."
-SERVICE_2_TITRE: "Demenagement Longue Distance"
-SERVICE_2_DESC: "Transport securise de vos biens partout en France, avec suivi en temps reel et respect des delais."
-SERVICE_3_TITRE: "Monte-Meuble"
-SERVICE_3_DESC: "Service de monte-meuble professionnel pour les acces difficiles, meubles volumineux et etages eleves."
-SERVICE_4_TITRE: "Garde-Meuble"
-SERVICE_4_DESC: "Stockage securise et climatise de vos biens pendant toute la duree necessaire."
-SERVICE_5_TITRE: "Emballage & Protection"
-SERVICE_5_DESC: "Emballage professionnel de tous vos objets, du plus fragile au plus volumineux, avec materiaux de qualite."
-SERVICE_6_TITRE: "Demenagement Bureau & Pro"
-SERVICE_6_DESC: "Demenagement d'entreprise avec planification minutieuse pour minimiser l'interruption d'activite."
+SERVICE_1_TITRE: "Couverture Neuve"
+SERVICE_1_DESC: "Installation complete de votre toiture en ardoise, tuile ou zinc, avec une finition soignee et durable."
+SERVICE_2_TITRE: "Renovation de Toiture"
+SERVICE_2_DESC: "Refection partielle ou totale de votre couverture pour redonner etancheite et esthetique a votre toit."
+SERVICE_3_TITRE: "Zinguerie"
+SERVICE_3_DESC: "Pose et reparation de gouttieres, descentes EP, cheneaux, noues et abergements en zinc ou cuivre."
+SERVICE_4_TITRE: "Isolation de Toiture"
+SERVICE_4_DESC: "Isolation thermique par l'interieur ou l'exterieur (sarking) pour ameliorer le confort et reduire la facture energetique."
+SERVICE_5_TITRE: "Depannage & Urgence"
+SERVICE_5_DESC: "Intervention rapide pour fuites, tuiles cassees, bachage d'urgence et reparations suite a intemperies."
+SERVICE_6_TITRE: "Demoussage & Entretien"
+SERVICE_6_DESC: "Nettoyage, traitement anti-mousse et hydrofuge pour prolonger la duree de vie de votre toiture."
 
 ## RESEAUX SOCIAUX
 
@@ -84,15 +84,15 @@ PINTEREST_URL: ""
 
 TEMOIGNAGE_1_NOM: "Client Satisfait"
 TEMOIGNAGE_1_VILLE: "Votre Ville"
-TEMOIGNAGE_1_TEXTE: "Nom de l'Entreprise a pris en charge notre demenagement de A a Z. L'equipe etait ponctuelle, soigneuse et tres professionnelle. Rien a redire !"
+TEMOIGNAGE_1_TEXTE: "Nom de l'Entreprise a refait entierement notre toiture en ardoise. Le travail est impeccable, l'equipe ponctuelle et soigneuse. Nous recommandons les yeux fermes !"
 TEMOIGNAGE_1_NOTE: "5"
-TEMOIGNAGE_2_NOM: "Famille Dupont"
+TEMOIGNAGE_2_NOM: "Famille Placeholder"
 TEMOIGNAGE_2_VILLE: "Commune voisine"
-TEMOIGNAGE_2_TEXTE: "Un demenagement sans stress grace a leur organisation impeccable. Tout est arrive en parfait etat. Nous recommandons vivement."
+TEMOIGNAGE_2_TEXTE: "Intervention rapide apres une fuite. Diagnostic precis, reparation efficace et prix honnete. Un vrai professionnel de la couverture."
 TEMOIGNAGE_2_NOTE: "5"
-TEMOIGNAGE_3_NOM: "M. Durant"
+TEMOIGNAGE_3_NOM: "M. Placeholder"
 TEMOIGNAGE_3_VILLE: "Ville proche"
-TEMOIGNAGE_3_TEXTE: "Demenagement de nos bureaux en un weekend. Zero casse, zero retard. Une equipe au top du professionnalisme."
+TEMOIGNAGE_3_TEXTE: "Renovation complete de notre zinguerie. Gouttieres en zinc posees avec un soin remarquable. Aucun probleme depuis, meme apres de fortes pluies."
 TEMOIGNAGE_3_NOTE: "5"
 
 ## HEBERGEMENT
@@ -108,4 +108,4 @@ ADMIN_PASSWORD: "1234"
 
 ## PHOTOS
 
-PACK_PHOTOS_METIER: "demenageur"
+PACK_PHOTOS_METIER: "couvreur"

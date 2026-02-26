@@ -4,11 +4,11 @@ import Container from "@/components/ui/Container";
 import { clientConfig } from "@/config/client.config";
 
 const reasons = [
-  { title: `${clientConfig.ANNEES_EXPERIENCE} ans d'expertise`, desc: "Une équipe expérimentée avec une maîtrise logistique reconnue." },
-  { title: "Matériel professionnel", desc: "Camions équipés, couvertures de protection, matériel de manutention — uniquement du professionnel." },
-  { title: "Assurance tous risques", desc: "Tous vos biens sont couverts par une assurance transport complète." },
-  { title: "Devis transparent", desc: "Un devis détaillé et fixe, sans mauvaises surprises le jour du déménagement." },
-  { title: "Suivi personnalisé", desc: "Un interlocuteur dédié de la planification à l'installation finale." },
+  { title: `${clientConfig.ANNEES_EXPERIENCE} ans d'expertise`, desc: "Un savoir-faire artisanal transmis et perfectionné au fil des chantiers." },
+  { title: "Garantie décennale", desc: "Tous nos travaux de couverture sont couverts par une assurance décennale." },
+  { title: "Matériaux de qualité", desc: "Ardoise naturelle, tuiles terre cuite, zinc — uniquement des matériaux certifiés et durables." },
+  { title: "Devis gratuit et détaillé", desc: "Un devis transparent, poste par poste, sans surprises sur le prix final." },
+  { title: "Intervention rapide", desc: "Disponibilité et réactivité pour les urgences toiture et dépannages." },
 ];
 
 export default function WhyChooseUs() {
@@ -36,7 +36,7 @@ export default function WhyChooseUs() {
                 Pourquoi nous choisir
               </p>
               <h2 className="font-heading text-4xl md:text-5xl font-bold text-neutral-900 mb-8">
-                L&apos;Excellence au Service de Votre Déménagement
+                L&apos;Excellence au Service de Votre Toiture
               </h2>
             </FadeUp>
 

@@ -8,7 +8,7 @@ export const testimonials: Testimonial[] = [
     role: `Particulier — ${clientConfig.TEMOIGNAGE_1_VILLE}`,
     quote: clientConfig.TEMOIGNAGE_1_TEXTE,
     rating: parseInt(clientConfig.TEMOIGNAGE_1_NOTE, 10),
-    projectType: "Déménagement local",
+    projectType: "Renovation toiture",
     date: "2024-10-15",
   },
   {
@@ -17,7 +17,7 @@ export const testimonials: Testimonial[] = [
     role: `Particulier — ${clientConfig.TEMOIGNAGE_2_VILLE}`,
     quote: clientConfig.TEMOIGNAGE_2_TEXTE,
     rating: parseInt(clientConfig.TEMOIGNAGE_2_NOTE, 10),
-    projectType: "Déménagement longue distance",
+    projectType: "Isolation toiture",
     date: "2024-08-20",
   },
   {
@@ -26,7 +26,7 @@ export const testimonials: Testimonial[] = [
     role: `Professionnel — ${clientConfig.TEMOIGNAGE_3_VILLE}`,
     quote: clientConfig.TEMOIGNAGE_3_TEXTE,
     rating: parseInt(clientConfig.TEMOIGNAGE_3_NOTE, 10),
-    projectType: "Déménagement bureau",
+    projectType: "Depannage urgence",
     date: "2024-06-10",
   },
 ];

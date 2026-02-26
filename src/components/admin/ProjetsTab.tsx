@@ -43,12 +43,12 @@ interface ProjectForm {
 }
 
 const CATEGORIES = [
-  { value: "demenagement-local", label: "Déménagement local" },
-  { value: "longue-distance", label: "Longue distance" },
-  { value: "monte-meuble", label: "Monte-meuble" },
-  { value: "garde-meuble", label: "Garde-meuble" },
-  { value: "emballage", label: "Emballage" },
-  { value: "demenagement-bureau", label: "Déménagement bureau" },
+  { value: "couverture-ardoise", label: "Couverture ardoise" },
+  { value: "couverture-tuiles", label: "Couverture tuiles" },
+  { value: "couverture-zinc", label: "Couverture zinc" },
+  { value: "renovation", label: "Renovation" },
+  { value: "zinguerie", label: "Zinguerie" },
+  { value: "isolation", label: "Isolation" },
 ];
 
 function slugify(str: string) {
@@ -63,7 +63,7 @@ function slugify(str: string) {
 const EMPTY_FORM: ProjectForm = {
   slug: "",
   title: "",
-  category: "demenagement-local",
+  category: "couverture-ardoise",
   location: "",
   year: new Date().getFullYear(),
   surface: "",

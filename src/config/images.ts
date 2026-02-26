@@ -59,48 +59,48 @@ export const imageGroups: ImageGroup[] = [
     label: "Portfolio — Projets",
     images: [
       {
-        path: "/images/projects/ardoise-paris-1.png",
-        filename: "projects/ardoise-paris-1.png",
+        path: "/images/projects/projet-ardoise-1.png",
+        filename: "projects/projet-ardoise-1.png",
         usage: "Projet 1 — image principale",
       },
       {
-        path: "/images/projects/ardoise-paris-2.png",
-        filename: "projects/ardoise-paris-2.png",
+        path: "/images/projects/projet-ardoise-2.png",
+        filename: "projects/projet-ardoise-2.png",
         usage: "Projet 1 — image secondaire",
       },
       {
-        path: "/images/projects/ardoise-paris-3.png",
-        filename: "projects/ardoise-paris-3.png",
+        path: "/images/projects/projet-ardoise-3.png",
+        filename: "projects/projet-ardoise-3.png",
         usage: "Projet 1 — image tertiaire",
       },
       {
-        path: "/images/projects/tuiles-rambouillet-1.png",
-        filename: "projects/tuiles-rambouillet-1.png",
+        path: "/images/projects/projet-tuiles-1.png",
+        filename: "projects/projet-tuiles-1.png",
         usage: "Projet 2 — image principale",
       },
       {
-        path: "/images/projects/tuiles-rambouillet-2.png",
-        filename: "projects/tuiles-rambouillet-2.png",
+        path: "/images/projects/projet-tuiles-2.png",
+        filename: "projects/projet-tuiles-2.png",
         usage: "Projet 2 — image secondaire",
       },
       {
-        path: "/images/projects/tuiles-rambouillet-3.png",
-        filename: "projects/tuiles-rambouillet-3.png",
+        path: "/images/projects/projet-tuiles-3.png",
+        filename: "projects/projet-tuiles-3.png",
         usage: "Projet 2 — image tertiaire",
       },
       {
-        path: "/images/projects/zinc-versailles-1.png",
-        filename: "projects/zinc-versailles-1.png",
+        path: "/images/projects/projet-zinc-1.png",
+        filename: "projects/projet-zinc-1.png",
         usage: "Projet 3 — image principale",
       },
       {
-        path: "/images/projects/zinc-versailles-2.png",
-        filename: "projects/zinc-versailles-2.png",
+        path: "/images/projects/projet-zinc-2.png",
+        filename: "projects/projet-zinc-2.png",
         usage: "Projet 3 — image secondaire",
       },
       {
-        path: "/images/projects/zinc-versailles-3.png",
-        filename: "projects/zinc-versailles-3.png",
+        path: "/images/projects/projet-zinc-3.png",
+        filename: "projects/projet-zinc-3.png",
         usage: "Projet 3 — image tertiaire",
       },
       {
@@ -184,19 +184,19 @@ export const imageGroups: ImageGroup[] = [
     label: "Equipe & Portraits",
     images: [
       {
-        path: "/images/projects/portrait-jean-paul.png",
-        filename: "projects/portrait-jean-paul.png",
+        path: "/images/projects/portrait-dirigeant.png",
+        filename: "projects/portrait-dirigeant.png",
         usage: "Portrait dirigeant — page A propos",
       },
       {
-        path: "/images/projects/portrait-karim.png",
-        filename: "projects/portrait-karim.png",
+        path: "/images/projects/portrait-chef-equipe.png",
+        filename: "projects/portrait-chef-equipe.png",
         usage: "Portrait chef d'equipe — page A propos",
       },
       {
-        path: "/images/projects/portrait-theo.png",
-        filename: "projects/portrait-theo.png",
-        usage: "Portrait employe — page A propos",
+        path: "/images/projects/portrait-couvreur.png",
+        filename: "projects/portrait-couvreur.png",
+        usage: "Portrait couvreur — page A propos",
       },
       {
         path: "/images/projects/equipe-chantier.png",
