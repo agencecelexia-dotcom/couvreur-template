@@ -105,7 +105,7 @@ export default function Footer() {
                 { label: "Blog & Conseils", href: "/blog" },
                 { label: "Contact", href: "/contact" },
                 { label: "Mentions Légales", href: "/mentions-legales" },
-                { label: "Politique de Confidentialité", href: "/politique-de-confidentialite" },
+                { label: "Politique de Confidentialité", href: "/politique-confidentialite" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-sm text-neutral-400 hover:text-accent-400 transition-colors">
@@ -125,7 +125,7 @@ export default function Footer() {
           </p>
           <div className="flex items-center gap-6">
             <Link href="/mentions-legales" className="text-xs text-neutral-500 hover:text-neutral-400 transition-colors">Mentions légales</Link>
-            <Link href="/politique-de-confidentialite" className="text-xs text-neutral-500 hover:text-neutral-400 transition-colors">Confidentialité</Link>
+            <Link href="/politique-confidentialite" className="text-xs text-neutral-500 hover:text-neutral-400 transition-colors">Confidentialité</Link>
             <Link href="/admin/dashboard" className="text-xs text-neutral-500 hover:text-neutral-400 transition-colors opacity-40 hover:opacity-100">Admin</Link>
           </div>
         </div>
