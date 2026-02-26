@@ -49,7 +49,8 @@ Chaque variable suit le format : `NOM_VARIABLE: "valeur"`
 | `REGION` | Région | `"Île-de-France"` |
 | `PAYS` | Pays | `"France"` |
 | `HORAIRES` | Horaires d'ouverture | `"Lun-Ven: 8h00-18h00, Sam: 9h00-13h00"` |
-| `ZONE_INTERVENTION` | Zone géographique complète (utilisée dans FAQ, CTA, footer) | `"Versailles, Saint-Germain-en-Laye, Rambouillet et les Yvelines (78)"` |
+| `ZONE_INTERVENTION` | Zone géographique complète (texte libre utilisé dans FAQ, CTA, footer) | `"Versailles, Saint-Germain-en-Laye, Rambouillet et les Yvelines (78)"` |
+| `ZONES_LISTE` | **Liste de villes séparées par virgule** — alimente les badges "Notre Zone d'Intervention" sur la home ET les localisations du tableau de bord admin. La 1ère ville est mise en avant (badge coloré). | `"Versailles, Saint-Germain-en-Laye, Rambouillet, Poissy, Mantes-la-Jolie, Les Mureaux, Houdan"` |
 | `LATITUDE` | Latitude GPS (Schema.org) | `"48.8014"` |
 | `LONGITUDE` | Longitude GPS (Schema.org) | `"2.1301"` |
 
@@ -321,7 +322,8 @@ Vercel détecte automatiquement le push et relance un déploiement.
 - [ ] `ADRESSE` + `CODE_POSTAL` + `VILLE` + `DEPARTEMENT` + `REGION`
 - [ ] `LATITUDE` + `LONGITUDE` (pour Schema.org)
 - [ ] `HORAIRES`
-- [ ] `ZONE_INTERVENTION` — zones géographiques complètes
+- [ ] `ZONE_INTERVENTION` — zones géographiques complètes (texte libre)
+- [ ] `ZONES_LISTE` — liste de villes séparées par virgule (7 villes max recommandées)
 - [ ] `DOMAINE` — URL finale du site
 - [ ] `META_TITLE` + `META_DESCRIPTION` + `META_KEYWORDS`
 - [ ] `SLOGAN` + `ACCROCHE_HERO`
