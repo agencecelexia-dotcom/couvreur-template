@@ -27,6 +27,7 @@ REGION: "Votre Region"
 PAYS: "France"
 HORAIRES: "Lun-Ven: 8h00-18h00, Sam: 9h00-13h00"
 ZONE_INTERVENTION: "Votre ville et region"
+ZONES_LISTE: "Votre Ville, Ville A, Ville B, Ville C, Ville D, Ville E, Ville F"
 LATITUDE: "46.603354"
 LONGITUDE: "1.888334"
 

@@ -3,16 +3,10 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import Container from "@/components/ui/Container";
 import { clientConfig } from "@/config/client.config";
 
-const zones = [
-  { name: clientConfig.VILLE, type: "principale" as const },
-  { name: "Commune Nord", type: "secondaire" as const },
-  { name: "Commune Sud", type: "secondaire" as const },
-  { name: "Commune Est", type: "secondaire" as const },
-  { name: "Commune Ouest", type: "secondaire" as const },
-  { name: "Quartier Centre", type: "secondaire" as const },
-  { name: "Zone Périphérique A", type: "secondaire" as const },
-  { name: "Zone Périphérique B", type: "secondaire" as const },
-];
+const zones = clientConfig.ZONES_LISTE.split(",").map((name, i) => ({
+  name: name.trim(),
+  type: i === 0 ? ("principale" as const) : ("secondaire" as const),
+}));
 
 export default function ZoneIntervention() {
   return (

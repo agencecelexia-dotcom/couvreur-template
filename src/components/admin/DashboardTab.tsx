@@ -14,6 +14,10 @@ import {
   Clock,
   Percent,
 } from "lucide-react";
+import { clientConfig } from "@/config/client.config";
+
+// Zones parsed from ZONES_LISTE (comma-separated in CLIENT.md)
+const zones = clientConfig.ZONES_LISTE.split(",").map((z) => z.trim());
 
 type SubmissionStatus = "Nouveau" | "Contacté" | "En cours" | "Converti";
 
@@ -40,7 +44,7 @@ const INITIAL_SUBMISSIONS: Submission[] = [
     service: "Renovation toiture",
     subject: "Renovation toiture maison ancienne 150m2",
     message: "Bonjour, notre toiture en tuiles a plus de 40 ans et presente des fuites. Nous souhaitons un diagnostic complet et un devis pour la renovation. Maison de 150m2.",
-    location: "Quartier Centre",
+    location: zones[0] ?? clientConfig.VILLE,
     date: "21/02/2026",
     time: "10:23",
     status: "Nouveau",
@@ -53,7 +57,7 @@ const INITIAL_SUBMISSIONS: Submission[] = [
     service: "Isolation toiture",
     subject: "Isolation combles amenageables par sarking",
     message: "Nous souhaitons isoler notre toiture par l'exterieur (sarking) pour amenager les combles. Toiture de 120m2. Pouvez-vous nous faire un devis avec les aides eligibles ?",
-    location: "Commune Ouest",
+    location: zones[1] ?? zones[0] ?? clientConfig.VILLE,
     date: "20/02/2026",
     time: "14:45",
     status: "Contacté",
@@ -66,7 +70,7 @@ const INITIAL_SUBMISSIONS: Submission[] = [
     service: "Zinguerie",
     subject: "Remplacement gouttieres et descentes EP",
     message: "Les gouttieres de ma maison sont percees et les descentes d'eaux pluviales sont oxydees. Je souhaite un devis pour le remplacement complet en zinc.",
-    location: "Commune Est",
+    location: zones[2] ?? zones[0] ?? clientConfig.VILLE,
     date: "19/02/2026",
     time: "09:15",
     status: "En cours",
@@ -79,7 +83,7 @@ const INITIAL_SUBMISSIONS: Submission[] = [
     service: "Depannage urgence",
     subject: "Tuiles arrachees apres tempete — fuite",
     message: "Plusieurs tuiles ont ete arrachees par le vent cette nuit et il y a une fuite dans la chambre. Pouvez-vous intervenir rapidement pour un bachage d'urgence ?",
-    location: "Commune Nord",
+    location: zones[3] ?? zones[0] ?? clientConfig.VILLE,
     date: "18/02/2026",
     time: "16:30",
     status: "Converti",
@@ -92,7 +96,7 @@ const INITIAL_SUBMISSIONS: Submission[] = [
     service: "Couverture neuve",
     subject: "Couverture ardoise maison neuve 200m2",
     message: "Construction d'une maison neuve de 200m2, nous cherchons un couvreur pour la pose de la couverture en ardoise naturelle. Charpente en cours de pose.",
-    location: "Commune Sud",
+    location: zones[4] ?? zones[0] ?? clientConfig.VILLE,
     date: "17/02/2026",
     time: "11:00",
     status: "Nouveau",
