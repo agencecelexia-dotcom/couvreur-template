@@ -1,5 +1,5 @@
 /**
- * sync-client.ts — Template Demenageur
+ * sync-client.ts — Template Couvreur
  * Lit CLIENT.md et genere src/config/client.config.ts + met a jour globals.css
  * Usage: npm run sync-client
  */
@@ -80,7 +80,7 @@ function updateGlobalsCss(css: string, config: Record<string, string>): string {
 }
 
 function main() {
-  console.log("sync-client — Template Demenageur\n");
+  console.log("sync-client — Template Couvreur\n");
 
   if (!fs.existsSync(CLIENT_MD)) {
     console.error("CLIENT.md introuvable a la racine du projet");

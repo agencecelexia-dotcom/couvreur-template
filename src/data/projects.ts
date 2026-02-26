@@ -9,7 +9,7 @@ export const projects: Project[] = [
     shortDescription:
       "Refection complete d'une toiture en ardoise naturelle sur une maison bourgeoise de 200 m², avec remplacement de la sous-toiture et pose de faitieres en zinc.",
     fullDescription:
-      "Refection integrale de la couverture d'une maison bourgeoise du XIXe siecle. Depose de l'ancienne couverture en ardoise, remplacement de l'ecran sous-toiture, verification et traitement de la charpente, puis repose d'ardoises naturelles d'Angers. Finitions en zinc naturel pour les faitieres, rives et noues.",
+      "Refection integrale de la couverture d'une maison bourgeoise du XIXe siecle. Depose de l'ancienne couverture en ardoise, remplacement de l'ecran sous-toiture, verification et traitement de la charpente, puis repose d'ardoises naturelles de haute qualite. Finitions en zinc naturel pour les faitieres, rives et noues.",
     challenge:
       "Charpente ancienne presentant des signes de fatigue sur certains arbaletriers. Acces difficile au chantier en raison de la hauteur et de la pente du toit (45 degres). Conservation du cachet architectural de la maison.",
     solution:

@@ -12,7 +12,7 @@ export const faqItems: FaqItem[] = [
   },
   {
     question: "Quels materiaux de couverture utilisez-vous ?",
-    answer: "Nous travaillons avec l'ensemble des materiaux de couverture : ardoise naturelle d'Angers ou d'Espagne, tuiles en terre cuite (plates, mecaniques, canal), tuiles en beton, zinc naturel ou pre-patine, cuivre, bac acier et membrane EPDM. Nous vous conseillerons le materiau le plus adapte a votre projet, votre budget et aux contraintes du Plan Local d'Urbanisme.",
+    answer: "Nous travaillons avec l'ensemble des materiaux de couverture : ardoise naturelle française ou espagnole, tuiles en terre cuite (plates, mecaniques, canal), tuiles en beton, zinc naturel ou pre-patine, cuivre, bac acier et membrane EPDM. Nous vous conseillerons le materiau le plus adapte a votre projet, votre budget et aux contraintes du Plan Local d'Urbanisme.",
   },
   {
     question: "Quelle est la duree moyenne des travaux de toiture ?",

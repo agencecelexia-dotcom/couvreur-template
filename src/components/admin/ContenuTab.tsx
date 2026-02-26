@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Save, CheckCircle, AlertCircle } from "lucide-react";
+import { clientConfig } from "@/config/client.config";
 
 interface Fields {
   NOM_ENTREPRISE: string;
@@ -43,46 +44,42 @@ interface Fields {
 }
 
 const INITIAL_FIELDS: Fields = {
-  NOM_ENTREPRISE: "Nom de l'Entreprise",
-  NOM_LEGAL: "Nom de l'Entreprise SARL",
-  SIRET: "000 000 000 00000",
-  PRENOM_DIRIGEANT: "Prénom",
-  NOM_DIRIGEANT: "Nom",
-  DIPLOME_DIRIGEANT: "artisan couvreur diplome",
-  ANNEE_CREATION: "2010",
-  ANNEES_EXPERIENCE: "15",
-  TELEPHONE: "00 00 00 00 00",
-  EMAIL: "contact@votre-domaine.fr",
-  ADRESSE: "1 Rue de la Paix",
-  CODE_POSTAL: "00000",
-  VILLE: "Votre Ville",
-  DEPARTEMENT: "Votre Département",
-  REGION: "Votre Région",
-  HORAIRES: "Lun-Ven: 8h00-18h00, Sam: 9h00-13h00",
-  ZONE_INTERVENTION: "Votre ville et région",
-  SLOGAN: "Votre Slogan Ici",
-  ACCROCHE_HERO: "Votre Toiture — Entre de Bonnes Mains",
-  DESCRIPTION_ENTREPRISE:
-    "Votre description d'entreprise. Couverture, renovation, zinguerie et isolation — un savoir-faire artisanal au service de votre toiture.",
-  DESCRIPTION_FOOTER: "Votre description courte pour le footer du site.",
-  DESCRIPTION_APROPOS:
-    "Fondee par Prenom Nom, votre entreprise est nee d'une passion profonde pour le metier de couvreur et le travail bien fait.",
-  DOMAINE: "www.votre-domaine.fr",
-  META_TITLE: "Nom de l'Entreprise | Couvreur a Votre Ville",
-  META_DESCRIPTION:
-    "Couvreur a Votre Ville. Couverture, renovation de toiture, zinguerie, isolation, depannage urgence. Devis gratuit.",
-  META_KEYWORDS:
-    "couvreur, toiture, couverture, renovation toiture, zinguerie, isolation toiture, depannage toiture",
-  FACEBOOK_URL: "",
-  INSTAGRAM_URL: "",
-  LINKEDIN_URL: "",
-  PINTEREST_URL: "",
-  GOOGLE_MAPS_URL: "",
-  HEBERGEUR_NOM: "Vercel Inc.",
-  HEBERGEUR_ADRESSE: "340 Pine Street, Suite 701, San Francisco, CA 94104, USA",
-  HEBERGEUR_SITE: "vercel.com",
-  N8N_WEBHOOK: "",
-  ADMIN_PASSWORD: "1234",
+  NOM_ENTREPRISE: clientConfig.NOM_ENTREPRISE,
+  NOM_LEGAL: clientConfig.NOM_LEGAL,
+  SIRET: clientConfig.SIRET,
+  PRENOM_DIRIGEANT: clientConfig.PRENOM_DIRIGEANT,
+  NOM_DIRIGEANT: clientConfig.NOM_DIRIGEANT,
+  DIPLOME_DIRIGEANT: clientConfig.DIPLOME_DIRIGEANT,
+  ANNEE_CREATION: clientConfig.ANNEE_CREATION,
+  ANNEES_EXPERIENCE: clientConfig.ANNEES_EXPERIENCE,
+  TELEPHONE: clientConfig.TELEPHONE,
+  EMAIL: clientConfig.EMAIL,
+  ADRESSE: clientConfig.ADRESSE,
+  CODE_POSTAL: clientConfig.CODE_POSTAL,
+  VILLE: clientConfig.VILLE,
+  DEPARTEMENT: clientConfig.DEPARTEMENT,
+  REGION: clientConfig.REGION,
+  HORAIRES: clientConfig.HORAIRES,
+  ZONE_INTERVENTION: clientConfig.ZONE_INTERVENTION,
+  SLOGAN: clientConfig.SLOGAN,
+  ACCROCHE_HERO: clientConfig.ACCROCHE_HERO,
+  DESCRIPTION_ENTREPRISE: clientConfig.DESCRIPTION_ENTREPRISE,
+  DESCRIPTION_FOOTER: clientConfig.DESCRIPTION_FOOTER,
+  DESCRIPTION_APROPOS: clientConfig.DESCRIPTION_APROPOS,
+  DOMAINE: clientConfig.DOMAINE,
+  META_TITLE: clientConfig.META_TITLE,
+  META_DESCRIPTION: clientConfig.META_DESCRIPTION,
+  META_KEYWORDS: clientConfig.META_KEYWORDS,
+  FACEBOOK_URL: clientConfig.FACEBOOK_URL,
+  INSTAGRAM_URL: clientConfig.INSTAGRAM_URL,
+  LINKEDIN_URL: clientConfig.LINKEDIN_URL,
+  PINTEREST_URL: clientConfig.PINTEREST_URL,
+  GOOGLE_MAPS_URL: clientConfig.GOOGLE_MAPS_URL,
+  HEBERGEUR_NOM: clientConfig.HEBERGEUR_NOM,
+  HEBERGEUR_ADRESSE: clientConfig.HEBERGEUR_ADRESSE,
+  HEBERGEUR_SITE: clientConfig.HEBERGEUR_SITE,
+  N8N_WEBHOOK: clientConfig.N8N_WEBHOOK,
+  ADMIN_PASSWORD: clientConfig.ADMIN_PASSWORD,
 };
 
 const LONG_FIELDS: (keyof Fields)[] = [
